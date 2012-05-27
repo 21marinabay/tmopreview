@@ -13,7 +13,7 @@ while($row=mysql_fetch_array($query1))
                                         $newWord = $newId.$restofId.'jpg';
 				?>
                 <? if($count % 12 == 1): ?>
-                      <div class ="slide">
+                      <div class ="slide" style="border:1px solid green;">
                 <? endif; ?>
                 <div class="imageBox"><img  style="" src="design/fabrics/<? print $newWord;?>" class="img1"  title="<? print $row['Label'];?>" onClick="showfabric('<? print $newWord; ?>');" />
                           <div id="imageTitle2" style="margin-top:15px;"><? print $row['Label'];?><br />

@@ -7,6 +7,9 @@
 
 session_start();
 
+$DefaultFabric	= "0001" ; 
+$DefaultThread	= "0001" ; 
+$DefaultButton	= "0001" ;
 
 
 $BackDetails[1]	= "BackDetails-Closeup-Lyr01-";
@@ -378,11 +381,9 @@ $ShirtLyr16[4]	= "0002";
 $ShirtLyr16[5] 	= "Show";
 $ShirtLyr16[0]	= $ShirtLyr16[1].$ShirtLyr16[2].$ShirtLyr16[3].$ShirtLyr16[4].".png";
 
+
+
 // End of Subroutine : InitialiseVariables()
-
-
-
-
 
 $note ='';
 

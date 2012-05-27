@@ -12,7 +12,10 @@ $res = $db->getAll($sql);
 
 foreach($res as $f)
 {
-	$label[$f['filename']] = $f; 	
+	
+	 $label[$f['filename']] = $f; 	
+	 
+	
 }
 
 
@@ -24,6 +27,7 @@ if ($handle = opendir('design/collar')) {
     while (false !== ($file = readdir($handle))) {
 		if ($file != "." && $file != "..") {
       	 $filename[] = $file;
+      	 
 		}
     }
 
@@ -138,15 +142,13 @@ if ($handle = opendir('design/collar')) {
 
 	function updateRender_preview()
 	{
-		
-			
 			$('#loading').fadeIn('slow');
-			
+
 			$.getJSON('system/modules/<?=$script?>',{}
 			,function(data)
 			{
 				
-				$('#loading').fadeOut('slow');
+				//$('#loading').fadeOut('slow');
 				
 			
 				$.each(data, function(index, itemData) {
@@ -154,10 +156,11 @@ if ($handle = opendir('design/collar')) {
 	
 					if(data[index].path == 'img/<?=$folder?>/')
 					{	
-						
+				
 						$('#'+layer).attr('src','img/transparent.png');
 					
 					} else {
+						
 						$('#'+layer).attr('src',data[index].path);
 						
 					}
@@ -283,14 +286,9 @@ Shopping cart $0.00 (0)
 		  <div class="compartment2">
 			<div class="title2">TOTAL COST <span style="float:right" id="total"></span></div>
 		</div>
-		<div style="width:360px;height:210px;border:1px solid red;" id="zoom" >
-		
+		<div style="width:360px;height:210px;" id="zoom">
 			 <? for($i=0;$i<$layer;$i++): ?>
-			 	 
-                 <img class="lay<?=$i?>" id="layf<?=$i?>" style="height:210px;position:absolute;" src="img/transparent.png" /> 
-                  
-                  
-                  
+                  <img class="lay<?=$i?>" id="layf<?=$i?>" style="height:210px;position:absolute;" src="img/transparent.png" />
                   <? endfor; ?>
                   <img class=""style="height:210px;position:absolute;" src="images/frame.png" />
                   
@@ -299,11 +297,10 @@ Shopping cart $0.00 (0)
 		<div class="compartment">
 		<? foreach($label as $filename => $f): ?>
                 <?
-                
+                	
                 	
 					$id = str_replace('.jpg','',$filename);
 
-					
 				?>
 				
 		<div style="text-align:center;width:85px;height:115px;float:left;cursor:pointer;" onClick="showCollar('<?=$id?>');" >

@@ -23,6 +23,12 @@ $CollarLyr02[4] = $num;
 $CollarLyr03[4] = $num; 
 $CollarLyr04[4] = $num;
 $CollarLyr05[4] = $num; 
+$CuffShortLyr01[5] = $num;
+$CuffShortLyr02[5] = $num;
+$CuffShortLyr03[5] = $num;
+$CuffShortLyr04[5] = $num;
+$CuffShortLyr05[5] = $num;
+
 $CuffLyr01[4] = $num;
 $CuffLyr02[4] = $num;
 $CuffLyr03[4] = $num;

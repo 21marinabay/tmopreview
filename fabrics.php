@@ -103,7 +103,7 @@ if ($handle = opendir('design/fabrics')) {
 
 		}	
 
-        <li ><a href="#"   id="allfabrics" >ALL FABRICS</a></li>
+       
       
 		$("#allfabrics").click(function(){
 			
@@ -398,7 +398,7 @@ while($row=mysql_fetch_array($query1))
 							onPrevNextEvent:function(isNext, zeroBasedSlideIndex, slideElement)
 							{	
 								$("#startNum").html(zeroBasedSlideIndex + 1);
-								if(zeroBasedSlideIndex == 2)
+								if(zeroBasedSlideIndex == 12)
 								{
 									$("#nxt").hide();
 								}
@@ -596,21 +596,22 @@ div.ui-dialog-content{
               
                 <div class="slideshow" id="slideshowImage">
                                <? $count = 1; ?>
-                <? $all = 'select * from fabricsnew order by DisplaySequence asc';
+                <? $all = 'select * from fabricsnew where 1';
 				$query1 = mysql_query($all);
 while($row=mysql_fetch_array($query1))
 {	
 ?>	
                 <?
-					$id = $row['Filename'];
+				$id = $row['Filename'];
 					$newId = substr($id,0,6);
                                         $restofId = substr($id,22,6);
                                         $newWord = $newId.$restofId.'jpg';
+                                        $newFabric = substr($id,23,4);
 				?>
                 <? if($count % 12 == 1): ?>
                       <div class ="slide">
                 <? endif; ?>
-                <div class="imageBox"><img  style="" src="design/fabrics/<? print $newWord;?>" class="img1"  title="<? print $row['Label'];?>" onClick="showfabric('<? print $newWord; ?>');" />
+                <div class="imageBox"><img  style="" src="design/fabrics/<? print $newWord;?>" class="img1"  title="<? print $row['Label'];?>" onClick="showfabric('<? print $newFabric; ?>');return false;" />
                           <div id="imageTitle2" style="margin-top:15px;"><? print $row['Label'];?><br />
                           $<? print $row['Base Cost']; ?>
                           </div>
@@ -630,7 +631,7 @@ while($row=mysql_fetch_array($query1))
                 <div class="compartment">
         <div class="title" style="margin-top:-15px;"> </div>
         </div>
-        <div style="float:left;padding-top:12px;"> <img src='images/pager-left.png' id='previ' style='cursor:pointer;' /> PAGE <span id="startNum">1</span>/<span id="pageNum">10</span> <img src='images/pager-right.png'id='nxt' ' style='cursor:pointer;' /> </div>
+        <div style="float:left;padding-top:12px;"> <img src='images/pager-left.png' id='previ' style='cursor:pointer;' /> PAGE <span id="startNum">1</span>/<span id="pageNum">13</span> <img src='images/pager-right.png'id='nxt' ' style='cursor:pointer;' /> </div>
                  <div id="buttonWidget">
                   <ol>
                   <li style="background-color:white;"><a id="reset" href="#" style="background-color:white;color:black;" onclick="reset();updateRender_preview('undefined');return false;">Reset Sample</a></li>
