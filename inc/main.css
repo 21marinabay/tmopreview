@@ -1,0 +1,559 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+@font-face {
+	font-family: CharcoalCY;
+	src: url('CharcoalCY.ttf');
+}
+@font-face {
+	font-family: AvantGardeITbyBT;
+	src: url(AvantGardeITCbyBT-Book.eot);
+	src:  url(AvantGardeITCbyBT-Book.woff) format("woff"),  url(AVGARDN_0.ttf) format("truetype");
+}
+#design_output {
+	font-size:11px;
+	font-family: AvantGardeITbyBT;
+}
+* {
+	font-family: AvantGardeITbyBT;
+}
+body {
+	line-height: 1;
+	font-size:12px;
+	font-family: AvantGardeITbyBT;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+body {
+	margin: 0;
+	padding: 0;
+	color: #555;
+	font: normal 10pt AvantGardeITbyBT, Helvetica, sans-serif;
+	background: #EFEFEF;
+}
+#page {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	background: white;
+}
+#header {
+	margin: 0;
+	padding: 0;
+	font-family: AvantGardeITbyBT;
+}
+#content {
+	padding: 0px;
+	font-family: CharcoalCY;
+	font-size:11px;
+}
+#sidebar {
+	padding: 20px 20px 20px 0;
+}
+#footer {
+	padding: 10px;
+	padding-top: 35px;
+	padding-bottom: 15px;
+	border-top: 1px solid #C9E0ED;
+	background-color:#2b2b2b;
+	font-family: AvantGardeITbyBT;
+	color:#7f7a77;
+}
+ul.gray {
+	margin-right:60px;
+}
+ul.gray li {
+	font-size:12px;
+	color:#979797;
+}
+strong.gray {
+	font-size:15px;
+	color:#979797;
+	font-weight:bold;
+}
+ul.gray li a {
+	font-size:12px;
+	color:#979797;
+	text-decoration:none;
+}
+#logo {
+	padding: 10px 20px;
+	font-size: 200%;
+}
+#mainmenu {
+	background:white url(bg.gif) repeat-x left top;
+}
+#mainmenu ul {
+	padding:6px 20px 5px 20px;
+	margin:0px;
+}
+#mainmenu ul li {
+	display: inline;
+}
+#mainmenu ul li a {
+	color:#ffffff;
+	background-color:transparent;
+	font-size:12px;
+	font-weight:bold;
+	text-decoration:none;
+	padding:5px 8px;
+}
+#mainmenu ul li a:hover, #mainmenu ul li.active a {
+	color: #6399cd;
+	background-color:#EFF4FA;
+	text-decoration:none;
+}
+div.flash-error, div.flash-notice, div.flash-success {
+	padding:.8em;
+	margin-bottom:1em;
+	border:2px solid #ddd;
+}
+div.flash-error {
+	background:#FBE3E4;
+	color:#8a1f11;
+	border-color:#FBC2C4;
+}
+div.flash-notice {
+	background:#FFF6BF;
+	color:#514721;
+	border-color:#FFD324;
+}
+div.flash-success {
+	background:#E6EFC2;
+	color:#264409;
+	border-color:#C6D880;
+}
+div.flash-error a {
+	color:#8a1f11;
+}
+div.flash-notice a {
+	color:#514721;
+}
+div.flash-success a {
+	color:#264409;
+}
+div.form .rememberMe label {
+	display: inline;
+}
+div.view {
+	padding: 10px;
+	margin: 10px 0;
+}
+div.breadcrumbs {
+	font-size: 0.9em;
+	padding: 5px 20px;
+}
+div.breadcrumbs span {
+	font-weight: bold;
+}
+div.search-form {
+	padding: 10px;
+	margin: 10px 0;
+	background: #eee;
+}
+.portlet {
+}
+.portlet-decoration {
+	padding: 3px 8px;
+	background: #B7D6E7;
+	border-left: 5px solid #6FACCF;
+}
+.portlet-title {
+	font-size: 12px;
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+	color: #298dcd;
+}
+.portlet-content {
+	font-size:0.9em;
+	margin: 0 0 15px 0;
+	padding: 5px 8px;
+	background:#EFFDFF;
+}
+.portlet-content ul {
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	margin: 0;
+	padding: 0;
+}
+.portlet-content li {
+	padding: 2px 0 4px 0px;
+}
+.operations {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.operations li {
+	padding-bottom: 2px;
+}
+.operations li a {
+	font: bold 12px Arial;
+	color: #0066A4;
+	display: block;
+	padding: 2px 0 2px 8px;
+	line-height: 15px;
+	text-decoration: none;
+}
+.operations li a:visited {
+	color: #0066A4;
+}
+.operations li a:hover {
+	background: #80CFFF;
+}
+.navlist li {
+	display: inline;
+	list-style-type: none;
+	padding-right: 20px;
+}
+.navlist li a {
+	text-decoration:none;
+	color:black;
+}
+div.container {
+	padding:0 10px;
+	font-family: CharcoalCY;
+	width:990px;
+}
+div#footer {
+	width:990px;
+	margin-left:-10px;
+}
+.float_left {
+	width:140px;
+	float:left;
+	margin-left:30px;
+}
+.float_left2 {
+	width:120px;
+	float:left;
+	margin-left:30px;
+}
+.section {
+	padding-top:15px;
+}
+.section2 {
+	padding-top:10px;
+}
+.slideshow .slide {
+	width:360px;
+	height:100px;
+}
+.slideshow .slide .imageBox img {
+	clear:both;
+	cursor:pointer;
+}
+.slideshow .slide .imageBox {
+	height:90px;
+	margin:20px 5px;
+	float:left;
+	text-align:center;
+	width:80px;
+	cursor:pointer;
+}
+#design_window {
+	margin-left:-10px;
+}
+#design_window .title {
+	font-size:10pt;
+	text-transform:uppercase;
+}
+#design_window .toolbox {
+	border:3px solid #808080;
+	padding:5px;
+	width:371px;
+	height:810px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+div.toolbox {
+	width:360px;
+}
+#design_window .toolbox .compartment {
+}
+#design_window .toolbox .compartment .section {
+	width:110px;
+	display:inline;
+	float:left;
+}
+#design_window .toolbox .compartment .section2 {
+	width:110px;
+	display:inline;
+	float:left;
+}
+#design_window .toolbox .compartment .section .name {
+	height:40px;
+}
+#design_window .toolbox .compartment .title {
+	border-bottom:1px dotted black;
+}
+table {
+	width:963px;
+}
+table tr td {
+	vertical-align:top;
+}
+#click .section, #click .section img {
+	width:50px;
+	height:50px;
+	cursor:pointer;
+}
+#click .section, #click .section2 img {
+	width:50px;
+	height:50px;
+	cursor:pointer;
+}
+.activeBorder {
+	border:3px solid gray;
+}
+.section img {
+	cursor:pointer;
+}
+.section2 img {
+	cursor:pointer;
+}
+.collar_height {
+	height:30px;
+}
+.collar_height li {
+	height:30px;
+	padding-right:10px;
+	float:left;
+}
+.cuff_height li {
+	padding-right:10px;
+}
+#zoom {
+	background-color:#515151;
+}
+#zoom, #zoom img {
+	width:360px;
+	height:210px;
+}
+ul#menu li, ul#menu li a {
+	height:23px;
+	width:168px;
+	background-image:url('../images/menu-tab1.png');
+	background-repeat:no-repeat;
+	button:white;
+	padding:5px;
+	padding-top:10px;
+	text-transform:uppercase;
+	color:white;
+	font-family:AvantGardeITbyBT;
+}
+ul#menu li a {
+	font-size:12px;
+	text-decoration:none;
+	button:white;
+	font-family:AvantGardeITbyBT;
+}
+ul#menu li.active {
+	width:194px;
+	margin-bottom:2px;
+	margin-top:2px;
+}
+ul.measurements li, ul.measurements li a {
+	height:10px;
+	width:120px;
+	background-image:url('../images/big-tab.png');
+	button:white;
+	padding:5px 10px;
+	font-size:16pt;
+	text-transform:uppercase;
+}
+.section .name {
+	text-transform:capitalize;
+	font-size:12px;
+	font-weight:normal;
+}
+.section img {
+	margin-top:20px;
+}
+.compartment .title {
+	font-size:13px;
+	font-family:CharcoalCY;
+	font-weight:bold;
+	height:20px;
+}
+.cursor {
+	cursor:pointer;
+}
+
+#buttonWidget {
+	position:relative;
+	height:38px;
+	margin-top:-45px; 
+	padding-bottom:10px;
+	margin-right:5px;
+}
+#buttonWidget ol {
+	float:right;
+}
+#buttonWidget ol li {
+	float:left;
+	margin:5px 5px;
+	border:1px solid black;
+	padding:5px;
+	background-color:black;
+}
+#buttonWidget ol li a {
+	color:white;
+	text-decoration:none;
+}
+#design_window .title {
+	font-size:10pt;
+	text-transform:uppercase;
+}
+#design_window .title2 {
+	font-size:10pt;
+	text-transform:uppercase;
+}
+#design_window .toolbox {
+	border:3px solid #808080;
+	padding:5px;
+	width:361px;
+	height:810px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+#design_window .toolbox .compartment {
+	margin:10px;
+	margin-left:0px;
+	margin-right:0px;
+}
+#design_window .toolbox .compartment2 {
+	margin:0px;
+	width:360px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+#design_window .toolbox .compartment .section {
+	width:110px;
+	display:inline;
+	float:left;
+}
+#design_window .toolbox .compartment .section .name {
+	height:40px;
+}
+#design_window .toolbox .compartment .title {
+	border-bottom:1px dotted black;
+}
+table {
+	width:963px;
+}
+table tr td {
+	vertical-align:top;
+}
+#click .section, #click .section img {
+	width:50px;
+	height:50px;
+	cursor:pointer;
+}
+.activeBorder {
+	border:3px solid gray;
+}
+.section img {
+	cursor:pointer;
+}
+.button_height {
+	height:30px;
+}
+.button_height li {
+	height:30px;
+	float:left;
+}
+#zoom, #zoom img {
+	width:360px;
+	height:210px;
+}
+input.purple {
+	background-color:#8d8183;
+	border:0px;
+}
+.align-right {
+	text-align:right;
+}
+ul.footer_link {
+	float:left;
+	text-align:right;
+	width:150px;
+}
+.padding_left2 {
+	margin-left:150px;
+}
+.modalOverlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	background-color: rgba(0,0,0,0.3); /* black semi-transparent */
+}
+.ui-dialog, .ui-widget, .ui-widget-content {
+	background-color:white;
+}
+.ui-dialog table {
+	width:400px;
+	height:150px;
+}
+.ui-dialog-titlebar-close {
+	float:right;
+	background-image:url(../images/close.jpg);
+	background-repeat:no-repeat;
+	width:85px;
+	height:26px;
+}
+.ui-dialog-title {
+	font-size:11pt;
+	font-family:bold;
+	color:#333333;
+	font-family:AvantGardeITbyBT;
+	margin-left:10px;
+}
+div.ui-dialog-content {
+	font-family:AvantGardeITbyBT;
+}
+.fabricTitle {
+	font-size:15pt;
+}
+#faTitle {
+	font-family:CharcoalCY;
+}
+
+#normal_content {
+	padding-top:20px;
+	padding-left:50px;
+	font-family:AvantGardeITbyBT;
+	font-size:12px;
+	width:850px;
+}	
+
+.title {
+	font-size:17px;
+}
