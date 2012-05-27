@@ -11,6 +11,17 @@ if($collar == '')
 
 switch ($collar) {
     case 'business':	
+		
+		$CollarLyr04[2] = "Norm";
+		$CollarLyr05[2] = "Norm";
+		$CollarLyr06[2] = "Norm";
+		$CollarLyr07[2] = "Norm";
+		$ShirtLyr08[2] = "Collar-Norm";
+		$ShirtLyr09[2] = "Collar-Norm";
+		$ShirtLyr10[2] = "Collar-Norm";
+		$ShirtLyr11[2] = "Collar-Norm";
+
+		
 		$CollarLyr04[3] = "Classic-Inner.";
 		$CollarLyr05[3] = "Classic-Outer.";	 
 		$CollarLyr06[3] = "Classic-Thread.";	 
@@ -21,6 +32,16 @@ switch ($collar) {
 		$ShirtLyr11[3] = "Classic-Button.";	
         break;
     case 'full-spread':	
+	
+		$CollarLyr04[2] = "Norm";
+		$CollarLyr05[2] = "Norm"; 
+		$CollarLyr06[2] = "Norm"; 
+		$CollarLyr07[2] = "Norm";
+		$ShirtLyr08[2] = "Collar-Norm";
+		$ShirtLyr09[2] = "Collar-Norm";	
+		$ShirtLyr10[2] = "Collar-Norm";
+		$ShirtLyr11[2] = "Collar-Norm";
+
 		$CollarLyr04[3] = "Fullspread-Inner.";
 		$CollarLyr05[3] = "Fullspread-Outer.";	 
 		$CollarLyr06[3] = "Fullspread-Thread.";	 
@@ -294,7 +315,5 @@ if($CollarLyr09[5]=="Show")
 
 $output = json_encode($d);
 
-
 print $output;
 ?>
-
