@@ -229,40 +229,40 @@ $CollarLyr09[4]	= $DefaultButton;
 $CollarLyr09[5]	= "Show";
 $CollarLyr09[0]	= $CollarLyr09[1].$CollarLyr09[2].$CollarLyr09[3].$CollarLyr09[4].".png";
 
-$CuffShortLyr01[1] = “CuffShort-Closeup-Lyr01-“;
-$CuffShortLyr01[2] = ”Torso.”;
-$CuffShortLyr01[3] = ””;
+$CuffShortLyr01[1] = "CuffShort-Closeup-Lyr01-";
+$CuffShortLyr01[2] = "Torso.";
+$CuffShortLyr01[3] = "";
 $CuffShortLyr01[4] = $DefaultFabric;
-$CuffShortLyr01[5] =”Show”;
-$CuffShortLyr01[0] = $CuffShortLyr01[1].$CuffShortLyr01[2].$CuffShortLyr01[3].$CuffShortLyr01[4].“.png”;
+$CuffShortLyr01[5] ="Show";
+$CuffShortLyr01[0] = $CuffShortLyr01[1].$CuffShortLyr01[2].$CuffShortLyr01[3].$CuffShortLyr01[4].".png";
 
-$CuffShortLyr02[1] = “CuffShort-Closeup-Lyr02-“;
-$CuffShortLyr02[2] = ”Pocket.”;
-$CuffShortLyr02[3] = ””;
+$CuffShortLyr02[1] = "CuffShort-Closeup-Lyr02-";
+$CuffShortLyr02[2] = "Pocket.";
+$CuffShortLyr02[3] = "";
 $CuffShortLyr02[4] = $DefaultFabric;
-$CuffShortLyr02[5] = ”Show”;
-$CuffShortLyr02[0] = $CuffShortLyr02[1].$CuffShortLyr02[2].$CuffShortLyr02[3].$CuffShortLyr02[4].“.png”;
+$CuffShortLyr02[5] = "Show";
+$CuffShortLyr02[0] = $CuffShortLyr02[1].$CuffShortLyr02[2].$CuffShortLyr02[3].$CuffShortLyr02[4].".png";
 
-$CuffShortLyr03[1] = “CuffShort-Closeup-Lyr03-“;
-$CuffShortLyr03[2] = ”Sleeve.”;
-$CuffShortLyr03[3] = ””;
+$CuffShortLyr03[1] = "CuffShort-Closeup-Lyr03-";
+$CuffShortLyr03[2] = "Sleeve.";
+$CuffShortLyr03[3] = "";
 $CuffShortLyr03[4] = $DefaultFabric;
-$CuffShortLyr03[5] = ”Show”;
-$CuffShortLyr03[0] = $CuffShortLyr03[1].$CuffShortLyr03[2].$CuffShortLyr03[3].$CuffShortLyr03[4].“.png”;
+$CuffShortLyr03[5] = "Show";
+$CuffShortLyr03[0] = $CuffShortLyr03[1].$CuffShortLyr03[2].$CuffShortLyr03[3].$CuffShortLyr03[4].".png";
 
-$CuffShortLyr04[1] = “CuffShort-Closeup-Lyr04-“;
-$CuffShortLyr04[2] = ”Outer.”;
-$CuffShortLyr04[3] = ””;
+$CuffShortLyr04[1] = "CuffShort-Closeup-Lyr04-";
+$CuffShortLyr04[2] = "Outer.";
+$CuffShortLyr04[3] = "";
 $CuffShortLyr04[4] = $DefaultFabric;
-$CuffShortLyr04[5] = ”Show”;
-$CuffShortLyr04[0] = $CuffShortLyr04[1].$CuffShortLyr04[2].$CuffShortLyr04[3].$CuffShortLyr04[4].“.png”;
+$CuffShortLyr04[5] = "Show";
+$CuffShortLyr04[0] = $CuffShortLyr04[1].$CuffShortLyr04[2].$CuffShortLyr04[3].$CuffShortLyr04[4].".png";
 
-$CuffShortLyr05[1] = “CuffShort-Closeup-Lyr05-“;
-$CuffShortLyr05[2] = ”Inner.”;
-$CuffShortLyr05[3] = ””;
+$CuffShortLyr05[1] = "CuffShort-Closeup-Lyr05-";
+$CuffShortLyr05[2] = "Inner.";
+$CuffShortLyr05[3] = "";
 $CuffShortLyr05[4] = $DefaultFabric;
-$CuffShortLyr05[5] = ”Show”;
-$CuffShortLyr05[0] = $CuffShortLyr05[1].$CuffShortLyr05[2].$CuffShortLyr05[3].$CuffShortLyr05[4].“.png”;
+$CuffShortLyr05[5] = "Show";
+$CuffShortLyr05[0] = $CuffShortLyr05[1].$CuffShortLyr05[2].$CuffShortLyr05[3].$CuffShortLyr05[4].".png";
 
 
 $CuffLyr01[1]	= "Cuff-Closeup-Lyr00-";
@@ -412,65 +412,51 @@ $ShirtLyr16[4]	= $DefaultFabric;
 $ShirtLyr16[5] 	= "Show";
 $ShirtLyr16[0]	= $ShirtLyr16[1].$ShirtLyr16[2].$ShirtLyr16[3].$ShirtLyr16[4].".png";
 
-
-
-
-$specGender			= “Male”;
-$specFit				= “Regular”;
-$specSleeve			= “Long”;
-$specBaseFabric			= “Bilbao”;
-$specCollar			= “Business”;
-$specCollarStay			= “Removable”;
-$specCollarStiffness		= “Standard”;
-$specCollarHeight			= “Normal”;
-$specCollarOuterFabric		= “Bilbao”;
-$specCollarInnerFabric		= “Bilbao”;
-$specCuff				= “Single button”;
-$specCuffStiffness			= “Standard”;
-$specCuffPlacketButtons		= “Yes”;
-$specCuffStyle			= “Straight”;
-$specCuffOuterFabric		= “Bilbao”;
-$specCuffInnerFabric		= “Bilbao”;
-$specButton			= “White”;
-$specFastening			= “Normal placket”;
-$specPlacketOuterFabric		= “Bilbao”;
-$specPlacketInnerFabric		= “Bilbao”;
-$specPlacketFlipSideFabric		= “Bilbao”;
-$specPocket			= “Left pocket”;
-$specBottomCut			= “Classic”;
-$specBackDetails			= “No back details”;
-$specBackYoke			= “Classic”;
-$specButtonThread		= “Splashed White”;
-$specTieFix			= “No”;
-$specHandkerchief		= “No”;
-$specMeasurement		= “";
-$specBaseFabricCode		= “JT7015-65/13”;
-$specCollarOuterFabricCode	= “JT7015-65/13”;
-$specCollarInnerFabricCode	= “JT7015-65/13”;
-$specCuffOuterFabricCode		= “JT7015-65/13”;
-$specCuffInnerFabricCode		= “JT7015-65/13”;
-$specButtonCode			= “B002”;
-$specPlacketOuterFabricCode	= “JT7015-65/13”;
-$specPlacketInnerFabricCode	= “JT7015-65/13”;
-$specPlacketFlipSideFabricCode	= “JT7015-65/13”;
-$specButtonThreadCode		= “T1740”;
+$specGender			= "Male";
+$specFit				= "Regular";
+$specSleeve			= "Long";
+$specBaseFabric			= "Bilbao";
+$specCollar			= "Business";
+$specCollarStay			= "Removable";
+$specCollarStiffness		= "Standard";
+$specCollarHeight			= "Normal";
+$specCollarOuterFabric		= "Bilbao";
+$specCollarInnerFabric		= "Bilbao";
+$specCuff				= "Single button";
+$specCuffStiffness			= "Standard";
+$specCuffPlacketButtons		= "Yes";
+$specCuffStyle			= "Straight";
+$specCuffOuterFabric		= "Bilbao";
+$specCuffInnerFabric		= "Bilbao";
+$specButton			= "White";
+$specFastening			= "Normal placket";
+$specPlacketOuterFabric		= "Bilbao";
+$specPlacketInnerFabric		= "Bilbao";
+$specPlacketFlipSideFabric		= "Bilbao";
+$specPocket			= "Left pocket";
+$specBottomCut			= "Classic";
+$specBackDetails			= "No back details";
+$specBackYoke			= "Classic";
+$specButtonThread		= "Splashed White";
+$specTieFix			= "No";
+$specHandkerchief		= "No";
+$specMeasurement		= "";
+$specBaseFabricCode		= "JT7015-65/13";
+$specCollarOuterFabricCode	= "JT7015-65/13";
+$specCollarInnerFabricCode	= "JT7015-65/13";
+$specCuffOuterFabricCode		= "JT7015-65/13";
+$specCuffInnerFabricCode		= "JT7015-65/13";
+$specButtonCode			= "B002";
+$specPlacketOuterFabricCode	= "JT7015-65/13";
+$specPlacketInnerFabricCode	= "JT7015-65/13";
+$specPlacketFlipSideFabricCode	= "JT7015-65/13";
+$specButtonThreadCode		= "T1740";
 $specStandardSize			=0;
-$specShirtMeasurementUnit	=“”;
+$specShirtMeasurementUnit	="";
 $specShirtCollar			=0;
 $specShirtChest			=0;
 $specShirtWaist			=0;
-$specShirtLengthtoWaist		=0;
-$specShirtBottomWidth		=0;
-$specShirtLength			= 0;
-$specShirtShoulderWidth		=0;
-$specShirtLongSleeveUpper	=0;
-$specShirtLong SleeveLower	=0;
-$specShirtShort SleeveUpper	=0;
-$specShirtShort SleeveLower	=0;
-$specShirtCuff			=0;
-$specShirtSleeveWidth		=0;
-$specShirtShortSleeveOpening	=0;
-$specBodyMeasurementUnit	=“”;
+$specBodyMeasurementUnit	="";
 $specBodyNeck			=0;
 $specBodyChest			=0;
 $specBodyLengthtoWaist		=0;
@@ -483,6 +469,19 @@ $specBodyShortSleeveLength	=0;
 $specBodyWrist			= 0;
 $specBodyBiceps			= 0;
 $specBodyArmpit			= 0;
+
+$specShirtLengthtoWaist		=0;
+$specShirtBottomWidth		=0;
+$specShirtLength			= 0;
+$specShirtShoulderWidth		=0;
+$specShirtSleeveWidth		=0;
+$specShirtShortSleeveOpening	=0;
+$specShirtLongSleeveUpper	=0;
+$specShirtLongSleeveLower	=0;
+$specShirtShortSleeveUpper	=0;
+$specShirtShortSleeveLower	=0;
+$specShirtCuff			=0;
+
 
 $costBaseFabric		= 69.9;
 $costCollarOuterFabric	= 0.00;
@@ -500,9 +499,7 @@ $costHandkerchief		= 0.00;
 $costTotal		= 69.9;
 
 
-
 // End of Subroutine : InitialiseVariables()
-
-$note ='';
+ $note = '';
 
 ?>

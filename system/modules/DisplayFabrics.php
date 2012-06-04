@@ -1,4 +1,5 @@
 <?
+
 include('../global_variables.php');
 include('../current_setting.php');
 
@@ -93,9 +94,4 @@ if($zoomin == 1)
 $output = json_encode($d);
 
 print $output;
-
 ?>
-
-
-
-

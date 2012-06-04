@@ -1,7 +1,7 @@
 <?
-error_reporting(0);
-ini_set('display_errors',0);
-define('DSN', 'mysql://sgwebho_tmo1:zhiwei123@sg-webhosting.com/sgwebho_tmo_preview');
+error_reporting(1);
+ini_set('display_errors',1);
+define('DSN', 'mysql://sgwebho_tmo1:zhiwei123@localhost/sgwebho_tmo_preview');
 
 
 session_start();

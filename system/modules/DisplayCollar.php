@@ -52,6 +52,16 @@ switch ($collar) {
 		$ShirtLyr11[3] = "Fullspread-Button.";
         break;
     case 'semi cut away':
+	
+		$CollarLyr04[2] = "Norm";
+		$CollarLyr05[2] = "Norm"; 
+		$CollarLyr06[2] = "Norm"; 
+		$CollarLyr07[2] = "Norm";
+		$ShirtLyr08[2] = "Collar-Norm";
+		$ShirtLyr09[2] = "Collar-Norm";	
+		$ShirtLyr10[2] = "Collar-Norm";
+		$ShirtLyr11[2] = "Collar-Norm";
+
 		$CollarLyr04[3] = "Cutaway-Inner.";
 		$CollarLyr05[3] = "Cutaway-Outer.";	 
 		$CollarLyr06[3] = "Cutaway-Thread.";	 
@@ -59,6 +69,16 @@ switch ($collar) {
         break;
 		
     case 'mini':	
+	
+		$CollarLyr04[2] = "Norm";
+		$CollarLyr05[2] = "Norm"; 
+		$CollarLyr06[2] = "Norm"; 
+		$CollarLyr07[2] = "Norm";
+		$ShirtLyr08[2] = "Collar-Norm";
+		$ShirtLyr09[2] = "Collar-Norm";	
+		$ShirtLyr10[2] = "Collar-Norm";
+		$ShirtLyr11[2] = "Collar-Norm";
+
 		$CollarLyr04[3] = "Mini-Inner.";
 		$CollarLyr05[3] = "Mini-Outer.";	 
 		$CollarLyr06[3] = "Mini-Thread.";	 
@@ -66,31 +86,80 @@ switch ($collar) {
         break;
 		
     case 'long sleeve':	
+	
+		$CollarLyr04[2] = "Norm";
+		$CollarLyr05[2] = "Norm"; 
+		$CollarLyr06[2] = "Norm"; 
+		$CollarLyr07[2] = "Norm";
+		$ShirtLyr08[2] = "Collar-Norm";
+		$ShirtLyr09[2] = "Collar-Norm";	
+		$ShirtLyr10[2] = "Collar-Norm";
+		$ShirtLyr11[2] = "Collar-Norm";
+
 		$CollarLyr04[3] = "LongSleeve-Inner.";
 		$CollarLyr05[3] = "LongSleeve-Outer.";	 
 		$CollarLyr06[3] = "LongSleeve-Thread.";	 
 		$CollarLyr07[3] = "LongSleeve-Button.";	
         break;
-    case 'button down':	
+    case 'button down':
+	
+		$CollarLyr04[2] = "Norm";
+		$CollarLyr05[2] = "Norm"; 
+		$CollarLyr06[2] = "Norm"; 
+		$CollarLyr07[2] = "Norm";
+		$ShirtLyr08[2] = "Collar-Norm";
+		$ShirtLyr09[2] = "Collar-Norm";	
+		$ShirtLyr10[2] = "Collar-Norm";
+		$ShirtLyr11[2] = "Collar-Norm";
+
 		$CollarLyr04[3] = "ButtonDown-Inner.";
 		$CollarLyr05[3] = "ButtonDown-Outer.";	 
 		$CollarLyr06[3] = "ButtonDown-Thread.";	 
 		$CollarLyr07[3] = "ButtonDown-Button.";	
         break;
     case 'hidden button down':	
+
+		$CollarLyr04[2] = "Norm";
+		$CollarLyr05[2] = "Norm"; 
+		$CollarLyr06[2] = "Norm"; 
+		$CollarLyr07[2] = "Norm";
+		$ShirtLyr08[2] = "Collar-Norm";
+		$ShirtLyr09[2] = "Collar-Norm";	
+		$ShirtLyr10[2] = "Collar-Norm";
+		$ShirtLyr11[2] = "Collar-Norm";
+	
 		$CollarLyr04[3] = "HiddenButton-Inner.";
 		$CollarLyr05[3] = "HiddenButton-Outer.";	 
 		$CollarLyr06[3] = "HiddenButton-Thread.";	 
 		$CollarLyr07[3] = "HiddenButton-Button.";
         break;
-    case 'round':	
+    case 'round':
+	
+		$CollarLyr04[2] = "Norm";
+		$CollarLyr05[2] = "Norm"; 
+		$CollarLyr06[2] = "Norm"; 
+		$CollarLyr07[2] = "Norm";
+		$ShirtLyr08[2] = "Collar-Norm";
+		$ShirtLyr09[2] = "Collar-Norm";	
+		$ShirtLyr10[2] = "Collar-Norm";
+		$ShirtLyr11[2] = "Collar-Norm";
+
 		$CollarLyr04[3] = "Rounded-Inner.";
 		$CollarLyr05[3] = "Rounded-Outer.";	 
 		$CollarLyr06[3] = "Rounded-Thread.";	 
 		$CollarLyr07[3] = "Rounded-Button.";
         break;
 		
-    case 'mandarin':	
+    case 'mandarin':
+		$CollarLyr04[2] = "Norm";
+		$CollarLyr05[2] = "Norm"; 
+		$CollarLyr06[2] = "Norm"; 
+		$CollarLyr07[2] = "Norm";
+		$ShirtLyr08[2] = "Collar-Norm";
+		$ShirtLyr09[2] = "Collar-Norm";	
+		$ShirtLyr10[2] = "Collar-Norm";
+		$ShirtLyr11[2] = "Collar-Norm";
+
 		$CollarLyr04[2] = "Norm";
 		$CollarLyr05[2] = "Norm"; 
 		$CollarLyr06[2] = "Norm"; 
@@ -100,7 +169,16 @@ switch ($collar) {
 		$CollarLyr06[3] = "Mao-Thread.";	 
 		$CollarLyr07[3] = "Mao-Button.";	
         break;
-    case 'wing':	
+    case 'wing':
+		$CollarLyr04[2] = "Norm";
+		$CollarLyr05[2] = "Norm"; 
+		$CollarLyr06[2] = "Norm"; 
+		$CollarLyr07[2] = "Norm";
+		$ShirtLyr08[2] = "Collar-Norm";
+		$ShirtLyr09[2] = "Collar-Norm";	
+		$ShirtLyr10[2] = "Collar-Norm";
+		$ShirtLyr11[2] = "Collar-Norm";
+
 		$CollarLyr04[2] = "Norm";
 		$CollarLyr05[2] = "Norm"; 
 		$CollarLyr06[2] = "Norm"; 
@@ -110,7 +188,16 @@ switch ($collar) {
 		$CollarLyr06[3] = "Wing-Thread.";	 
 		$CollarLyr07[3] = "Wing-Button.";	
         break;
-    case 'tap':	
+    case 'tap':
+		$CollarLyr04[2] = "Norm";
+		$CollarLyr05[2] = "Norm"; 
+		$CollarLyr06[2] = "Norm"; 
+		$CollarLyr07[2] = "Norm";
+		$ShirtLyr08[2] = "Collar-Norm";
+		$ShirtLyr09[2] = "Collar-Norm";	
+		$ShirtLyr10[2] = "Collar-Norm";
+		$ShirtLyr11[2] = "Collar-Norm";
+
 		$CollarLyr04[2] = "Norm";
 		$CollarLyr05[2] = "Norm"; 
 		$CollarLyr06[2] = "Norm"; 

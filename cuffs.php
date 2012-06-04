@@ -126,21 +126,33 @@ if ($handle = opendir('design/cuff')) {
 	function showcuff(cuff)
 	{
 	
-			if(cuff == 'neapolitan')
-			{
-				$('#style1').attr('disabled','true');	
-				$('#style2').attr('disabled','true');
-				$('#style3').attr('checked','true');
-				setstyle('straight')
-			} else {
-				$('#style1').attr('disabled',false);	
-				$('#style2').attr('disabled',false);
-				$('#style1').attr('checked',false);
-				$('#style2').attr('checked',false);
-				$('#style3').attr('checked',false);
+			$("#stiffness2").attr("checked","checked");
+			$("#style3").attr("checked","checked");
+			
+			styleval	= $("#style3").val();
+			stiffnessval= $("#stiffness2").val();
+			
+			//Change color & enable to original on click of collor			
+			$('input:radio').attr('disabled', false);
+			$(".cuff_height li").css("color","#555555");
+			
+			if(cuff == 'neapolitan'){
+				$(".listiffness1").css("color","#ccc");
+				$(".listyle1").css("color","#ccc");
+				$(".listyle2").css("color","#ccc");
 				
+				$("#stiffness1").attr("disabled","disabled");
+				$("#style1").attr("disabled","disabled");
+				$("#style2").attr("disabled","disabled");
+			}
+			if(cuff == 'french cuff'){
+				$(".listiffness1").css("color","#ccc");
+				$("#stiffness1").attr("disabled","disabled");
 			}
 			
+			set_value('step4_style',styleval);
+			set_value('step4_stiffness',stiffnessval);			
+						
 			set_value('step4',cuff);
 			updateRender(cuff);
 			updateRender_preview(cuff);
@@ -148,13 +160,15 @@ if ($handle = opendir('design/cuff')) {
 
 
 	function setstyle(style)
-	{
-		
-			set_value('step4_style',style);
-			updateRender();
-			updateRender_preview();
+	{	
+		set_value('step4_style',style);
+		updateRender();
+		updateRender_preview();
 	}
-	
+	function setstiffness(stiffness)
+	{
+		set_value('step4_stiffness',stiffness);
+	}
 
 
 
@@ -178,6 +192,7 @@ if ($handle = opendir('design/cuff')) {
 						$('#'+layer).attr('src','img/transparent.png');
 					
 					} else {
+					
 						$('#'+layer).attr('src',data[index].path);
 						
 					}
@@ -326,7 +341,7 @@ Go for regular cuffs with buttons for other casual occasions. Other options incl
             <td><div id = "design_window">
                
                  
-              <div style="height:628px;" class="toolbox">
+              <div style="height:auto;" class="toolbox">
 		
 		 <div class="compartment2">
 			<div class="title2">TOTAL COST <span style="float:right" id="total"></span></div>
@@ -351,32 +366,32 @@ Go for regular cuffs with buttons for other casual occasions. Other options incl
             <? endforeach; ?>
 		</div>
 		<div style="clear:both;"></div>	
-        
+       
        <div class="compartment">
-		<div class="title">CUFF Stiffness</div>
+		<div class="title">CUFF STIFFNESS</div>
 		<ul class="cuff_height">
-			<li>
-				<input type="radio" id="height" name="height" value="1" low="Low">				Soft
+			<li class="listiffness1">
+				<input type="radio" id="stiffness1" name="stiffness" value="Soft" onclick="setstiffness(this.value);" >Soft
 			</li>
-			<li>
-				<input type="radio" id="height" name="height" value="1" low="Low">				Standard
+			<li class="listiffness2">
+				<input type="radio" id="stiffness2" name="stiffness" value="Standard" onclick="setstiffness(this.value);" >Standard
 			</li>
-			<li>
-				<input type="radio" id="height" name="height" value="1" low="Low">				Hard
+			<li class="listiffness3">
+				<input type="radio" id="stiffness3" name="stiffness" value="Hard" onclick="setstiffness(this.value);">Hard
 			</li>
 		</ul>
 		</div>
         <div class="compartment">
 		<div class="title">CUFF STYLE </div>
 		<ul class="cuff_height">
-			<li>
-				<input type="radio"  name="height" id="style1" value="1" low="Low" onclick="setstyle('beveled');">				Beveled
+			<li class="listyle1">
+				<input type="radio"  name="style" id="style1" value="Beveled" onclick="setstyle('beveled');">Beveled
 			</li>
-			<li>
-				<input type="radio" name="height" id="style2" value="1" low="Low" onclick="setstyle('round');">				Round
+			<li class="listyle2">
+				<input type="radio" name="style" id="style2" value="Round" onclick="setstyle('round');">Round
 			</li>
-			<li>
-				<input type="radio"  name="height" id="style3" value="1" low="Low" onclick="setstyle('straight');">				Straight
+			<li class="listyle3">
+				<input type="radio"  name="style" id="style3" value="Straight" onclick="setstyle('straight');">Straight
 			</li>
 			</ul>
 		</div>

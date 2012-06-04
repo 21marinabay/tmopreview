@@ -228,6 +228,8 @@ if ($handle = opendir('design/fabrics')) {
 						$('#'+layer).attr('src','img/transparent.png');
 					
 					} else {
+						
+						
 						$('#'+layer).attr('src',data[index].path);
 						
 					}
@@ -591,10 +593,10 @@ div.ui-dialog-content{
                    <div class="compartment">
         <div class="title" style="margin-top:-15px;"> </div>
         </div>
-        <div class="compartment">
+        <div class="compartment" >
                   <div class="fabric" style="height:420px"">
               
-                <div class="slideshow" id="slideshowImage">
+                <div class="slideshow" id="slideshowImage" >
                                <? $count = 1; ?>
                 <? $all = 'select * from fabricsnew where 1';
 				$query1 = mysql_query($all);

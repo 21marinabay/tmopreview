@@ -121,12 +121,137 @@ if ($handle = opendir('design/collar')) {
 		
 	}
 	
+	function updateStayFitness(collar)
+	{
+		//Unset radio button for all Stay & Stiffness
+		$(".collar_height li input:radio").removeAttr("checked");		
+		
+		//Change color & enable to original on click of collor		
+		$('input:radio').attr('disabled', false);
+		$(".collar_height li").css("color","#555555");
+		
+		//Perform actions on click of each collor
+		switch(collar){
+		
+			case 'business':
+				$("#stay3").attr("checked","checked");
+				$("#stiffness2").attr("checked","checked");
+			break;
+			
+			case 'full-spread':
+				$("#stay3").attr("checked","checked");
+				$("#stiffness2").attr("checked","checked");
+			break;
+			
+			case 'semi cut away':
+				$("#stay3").attr("checked","checked");
+				$("#stiffness2").attr("checked","checked");
+			break;
+			
+			case 'mini':			
+				//To disable radio button and text
+				$("#height2").removeAttr("checked");
+				$("#height2").attr("disabled","disabled");
+				$(".liheight2").css("color","#CCC");
+				
+				$("#stay2").attr("disabled","disabled");
+				$(".listay2").css("color","#CCC");
+				
+				//For selecting radio button				
+				$("#stay3").attr("checked","checked");
+				$("#stiffness2").attr("checked","checked");				
+			break;
+			
+			case 'long sleeve':
+			
+				$("#stay2").attr("disabled","disabled");
+				$(".listay2").css("color","#CCC");
+
+				$("#stay1").attr("checked","checked");
+				$("#stiffness2").attr("checked","checked");
+			break;
+			
+			case 'button down':
+				
+				$("#stay2").attr("disabled","disabled");
+				$(".listay2").css("color","#CCC");
+				$("#stay3").attr("disabled","disabled");
+				$(".listay3").css("color","#CCC");
+				$("#stiffness2").attr("disabled","disabled");
+				$(".listiffness2").css("color","#CCC");
+				$("#stiffness3").attr("disabled","disabled");
+				$(".listiffness3").css("color","#CCC");
+				
+				
+				$("#stay1").attr("checked","checked");
+				$("#stiffness1").attr("checked","checked");
+			break;
+
+			case 'hidden button down':
+				$("#stay2").attr("disabled","disabled");
+				$(".listay2").css("color","#CCC");
+
+				$("#stay1").attr("checked","checked");
+				$("#stiffness1").attr("checked","checked");
+			break;
+			
+			case 'round':
+				$("#stay3").attr("checked","checked");
+				$("#stiffness2").attr("checked","checked");
+			break;
+			
+			case 'mandarin':
+				$("#height2").removeAttr("checked");
+				$("#height2").attr("disabled","disabled");
+				$(".liheight2").css("color","#CCC");
+				$("#stay2").attr("disabled","disabled");
+				$(".listay2").css("color","#CCC");
+				$("#stay3").attr("disabled","disabled");
+				$(".listay3").css("color","#CCC");
+
+				$("#stay1").attr("checked","checked");
+				$("#stiffness2").attr("checked","checked");
+			break;
+			
+    		case 'wing':
+				$("#height2").removeAttr("checked");
+				$("#height2").attr("disabled","disabled");
+				$(".liheight2").css("color","#CCC");
+				$("#stay2").attr("disabled","disabled");
+				$(".listay2").css("color","#CCC");
+				$("#stay3").attr("disabled","disabled");
+				$(".listay3").css("color","#CCC");
+				$("#stiffness1").attr("disabled","disabled");
+				$(".listiffness1").css("color","#CCC");
+
+				$("#stay1").attr("checked","checked");
+				$("#stiffness2").attr("checked","checked");			
+			break;
+			
+			case 'tap':
+				$("#height2").removeAttr("checked");
+				$("#height2").attr("disabled","disabled");
+				$(".liheight2").css("color","#CCC");
+			
+				$("#stay3").attr("checked","checked");
+				$("#stiffness2").attr("checked","checked");
+			break;
+				
+			default:
+				$("#stay2").attr("checked","checked");
+				$("#stiffness2").attr("checked","checked");
+			break;
+		}	
+		
+	}
+	
 	function showCollar(collar)
 	{
-		
+			updateStayFitness(collar);
 			set_value('step3',collar);
 			updateRender();
 			updateRender_preview();
+			
 	}
 	
 
@@ -160,7 +285,7 @@ if ($handle = opendir('design/collar')) {
 						$('#'+layer).attr('src','img/transparent.png');
 					
 					} else {
-						
+					
 						$('#'+layer).attr('src',data[index].path);
 						
 					}
@@ -312,11 +437,11 @@ Shopping cart $0.00 (0)
 			<div class="title">Collar Height</div>
 			<ul class="collar_height">
 				
-				<li>
-					<input type="radio" low="Low" checked="checked" value="1" name="height" id="height" onclick="setheight('normal');">Normal
+				<li class="liheight1">
+					<input type="radio" low="Low" checked="checked" value="1" name="height" id="height1" onclick="setheight('normal');">Normal
 				</li>
-				<li>
-					<input type="radio" low="Low" checked="checked" value="1" name="height" id="height" onclick="setheight('high');">	High
+				<li class="liheight2">
+					<input type="radio" low="Low" checked="checked" value="1" name="height" id="height2" onclick="setheight('high');">High
 				</li>
 			</ul>
 		</div>
@@ -325,11 +450,14 @@ Shopping cart $0.00 (0)
 		<div class="compartment">
 			<div class="title">Collar Stay</div>
 			<ul class="collar_height">
-				<li>
-					<input type="radio" id="height" name="height" value="1" checked="checked" low="Low">					Removable
+	            <li class="listay1">
+					<input type="radio" id="stay1" name="stay">No Stay
 				</li>
-				<li>
-					<input type="radio" id="height" name="height" value="1" checked="checked" low="Low">					Permanent
+				<li class="listay2">
+					<input type="radio" id="stay2" name="stay">Removable
+				</li>
+				<li class="listay3">
+					<input type="radio" id="stay3" name="stay">Permanent
 				</li>
 			</ul>
 		</div>
@@ -337,14 +465,14 @@ Shopping cart $0.00 (0)
 		<div class="compartment">
 		<div class="title">Collar Stiffness</div>
 		<ul class="collar_height">
-			<li>
-				<input type="radio" id="height" name="height" value="1" checked="checked" low="Low">				Soft
+			<li class="listiffness1">
+				<input type="radio" id="stiffness1" name="stiffness">Soft
 			</li>
-			<li>
-				<input type="radio" id="height" name="height" value="1" checked="checked" low="Low">				Standard
+			<li class="listiffness3">
+				<input type="radio" id="stiffness2" name="stiffness">Standard
 			</li>
-			<li>
-				<input type="radio" id="height" name="height" value="1" checked="checked" low="Low">				Hard
+			<li class="listiffness3">
+				<input type="radio" id="stiffness3" name="stiffness">Hard
 			</li>
 			</ul>
 		</div><div id="buttonWidget">

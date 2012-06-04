@@ -4,8 +4,8 @@
 
 // End of Declare global variables
 // Subroutine - InitialiseVariables()
-error_reporting(0);
-ini_set('display_errors',0);
+error_reporting(1);
+ini_set('display_errors',1);
 
 session_start();
 
@@ -13,6 +13,8 @@ include('system/global_variables.php');
 
 
 $fit = $_SESSION['step1a'];
+
+
 
 
 switch ($fit) {

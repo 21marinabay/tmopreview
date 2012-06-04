@@ -7,12 +7,12 @@ $layer = 9;
 $script = 'DisplayCollar.php';
 $folder = 'Collar';
 
-$sql = 'select * from fabrics order by item_order ASC';
-$d = $db->getAll($sql);
+$sql1 = 'select * from fabricsnew order by DisplaySequence asc';
+$e = $db->getAll($sql1);
 
-foreach($d as $f)
+foreach($e as $f)
 {
-	$filename[$f['filename']] = $f; 
+	$filename[$f['Filename']] = $f; 
 }
 
 
@@ -30,6 +30,7 @@ if ($handle = opendir('design/fabrics')) {
 
     closedir($handle);
 }
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -53,6 +54,13 @@ if ($handle = opendir('design/fabrics')) {
 
 	$(document).ready(function(){
 		showfabric('');	
+		
+		$(".img1").click(function(){
+		
+			var fabhtml = $(this).next().html();
+			set_value('step12_value',fabhtml);
+			
+		});
 		
 		$("#details").click(function(){
 
@@ -282,7 +290,7 @@ float:right;
 							onPrevNextEvent:function(isNext, zeroBasedSlideIndex, slideElement)
 							{	
 								$("#startNum").html(zeroBasedSlideIndex + 1);
-								if(zeroBasedSlideIndex == 2)
+								if(zeroBasedSlideIndex == 12)
 								{
 									$("#nxt").hide();
 								}
@@ -303,32 +311,41 @@ float:right;
 				});
 			 </script>
                 <div class="slideshow">
-                <? $count = 1; ?>
-                <? foreach($filename as $file => $s): ?>
+                
+				<? $count = 1; ?>
+                <? $all = 'select * from fabricsnew where 1';
+				$query1 = mysql_query($all);
+				while($row=mysql_fetch_array($query1))
+				{	
+				?>	
                 <?
-					$id = str_replace('Fabric.','',$file );
-					$id = str_replace('.jpg','',$id);
-
+				$id = $row['Filename'];
+					$newId = substr($id,0,6);
+                                        $restofId = substr($id,22,6);
+                                        $newWord = $newId.$restofId.'jpg';
+                                        $newFabric = substr($id,23,4);
 				?>
                 <? if($count % 12 == 1): ?>
                       <div class ="slide">
                 <? endif; ?>
-                <div class="imageBox"><img  style="" src="design/fabrics/Fabric.<?=$file?>" class="img1"  title="Fabric.0001.jpg" onClick="showfabric('<?=$id?>');" />
-                          <div id="imageTitle2" style="margin-top:15px;"><?=$s['label']?><br />
-                          $<?=$s['price']?></div>
+                <div class="imageBox"><img  style="" src="design/fabrics/<? print $newWord;?>" class="img1"  title="<? print $row['Label'];?>" onClick="showfabric('<? print $newFabric; ?>');return false;" />
+                          <div id="imageTitle2" style="margin-top:15px;"><? print $row['Label'];?><br />
+                          $<? print $row['Collar Contrast Cost']; ?>
+                          </div>
                           </div>
                           
                       <? $count ++; ?>
                 <? if($count % 12 == 1): ?>
                       </div>
                 <? endif; ?>
-                <? endforeach; ?>
+                
+                <? } ?>
                     
-                    </div>
+                </div>
                     
               </div>
                 <div id="buttonWidget">
-                  <div style="float:left;padding-top:12px;"> <img src='images/pager-left.png' id='previ' style='cursor:pointer;' /> PAGE <span id="startNum">1</span>/<span id="pageNum">3</span> <img src='images/pager-right.png'id='nxt' ' style='cursor:pointer;' /> </div>
+                  <div style="float:left;padding-top:12px;"> <img src='images/pager-left.png' id='previ' style='cursor:pointer;' /> PAGE <span id="startNum">1</span>/<span id="pageNum">13</span> <img src='images/pager-right.png'id='nxt' ' style='cursor:pointer;' /> </div>
                   <ol>
                   <li style="background-color:white;"><a id="reset" href="#" style="background-color:white;color:black;" onclick="reset();return false;">Reset Sample</a></li>
                   <li><a href="#" id="details" onclick="return false;">Details</a></li>

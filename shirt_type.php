@@ -77,9 +77,11 @@ $point = 1;
 	
 	function showshirt(id,fit)
 	{
+			alert(id);
 			set_value('step1a',fit);
 			set_value('step1b',id);
 			updateRender(id,fit);
+			
 	}
 
 	function updateRender(id,fit)
@@ -102,6 +104,7 @@ $point = 1;
 						$('#'+layer).attr('src','img/transparent.png');
 					
 					} else {
+						(data[index].path);
 						$('#'+layer).attr('src',data[index].path);
 						
 					}
@@ -184,7 +187,7 @@ $point = 1;
             <td><div id="design_window">
                 <div style="height:544px;" class="toolbox">
                   <div class="compartment2">
-                    <div class="title2">TOTAL COST <span style="float:right" id="total"></span></div>
+                    <div class="title2"><?php $type ;?>TOTAL COST <span style="float:right" id="total"></span></div>
                   </div>
                   <div class="compartment" style="margin-top:-20px;">
                     <div class="title"> </div>
