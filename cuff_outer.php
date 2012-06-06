@@ -7,11 +7,7 @@ $layer = 5;
 $script = 'DisplayCuff.php';
 $folder = 'Fabric';
 
-
-
-echo "<br>TYPE"; 
-echo $_SESSION['type'] ;
-
+echo $_SESSION['shirttype'];
 
 $sql1 = 'select * from fabricsnew order by DisplaySequence asc';
 $e = $db->getAll($sql1);
@@ -339,7 +335,7 @@ float:right;
                 <? endif; ?>
                 <div class="imageBox"><img  style="" src="design/fabrics/<? print $newWord;?>" class="img1"  title="<? print $row['Label'];?>" onClick="showfabric('<? print $newFabric; ?>');return false;" />
                           <div id="imageTitle2" style="margin-top:15px;"><? print $row['Label'];?><br />
-                          $<? print $row['Base Cost']; ?>
+                          $<? print $row['Cuff Contrast Cost']; ?>
                           </div>
                           </div>
                           

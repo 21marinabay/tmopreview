@@ -9,12 +9,12 @@ ini_set('display_errors',1);
 
 session_start();
 
+include('system/config.php');
+
 include('system/global_variables.php');
 
 
 $fit = $_SESSION['step1a'];
-
-
 
 
 switch ($fit) {
@@ -104,7 +104,7 @@ switch ($collar) {
 		$ShirtLyr10[3] = "Fullspread-Thread.";	
 		$ShirtLyr11[3] = "Fullspread-Button.";
         break;
-    case 'semi cut away':
+    case 'cut away':
 		$CollarLyr04[3] = "Cutaway-Inner.";
 		$CollarLyr05[3] = "Cutaway-Outer.";	 
 		$CollarLyr06[3] = "Cutaway-Thread.";	 
@@ -291,6 +291,56 @@ if($icon_num != '')
 	$ShirtLyr12[4] = $icon_num; 
 	$ShirtLyr13[4] = $icon_num; 
 	$ShirtLyr16[4] = $icon_num;
+	
+	
+	$query = "SELECT * FROM fabricsnew WHERE Filename like '%".$_SESSION['step2']."%'";
+	//print($query);
+	//error_log($query);
+	$d = $db->getAll($query);
+	
+		$ButtonMatch  = $d[0]['MatchingButtonIconNum'];
+		//print($ButtonMatch);
+		$_SESSION['step5'] = $d[0]['MatchingButtonIconNum'];
+		$query1 = "SELECT * FROM Buttonsnew WHERE `Icon Number` like '%".$_SESSION['step5']."%'";
+		$d1 = $db->getAll($query1);
+		$_SESSION['step5_html'] = $d1[0]['Label'].' <br> $'.$d1[0]['Cost'];
+		
+	
+		$ButtonLyr03[4]		= $ButtonMatch ;
+		$PlacketLyr04[4]		= $ButtonMatch ;
+		$PlacketContrastLyr06[4]	= $ButtonMatch ;
+		$TieFixLyr05[4] 		= $ButtonMatch ;
+		$CollarLyr07[4] 		= $ButtonMatch ; 
+		$CollarLyr09[4] 		= $ButtonMatch ;
+		$CuffLyr05[4] 		= $ButtonMatch ;
+		$ShirtLyr07[4] 		= $ButtonMatch ;
+		
+		$ShirtLyr11[4] 		= $ButtonMatch ;
+		$ShirtLyr15[4] 		= $ButtonMatch ;
+		
+		
+	
+	
+		
+		$threadmatch = $d[0]['MatchingThreadIconNum'];
+		
+		print($threadmatch);
+		
+		
+		$ButtonLyr02[4]		= $threadmatch ;
+		$PlacketLyr03[4]		= $threadmatch ;
+		$PlacketContrastLyr05[4] = $threadmatch ;
+		$TieFixLyr04[4] 		= $threadmatch ;
+		$CollarLyr06[4] 		= $threadmatch ;
+		$CollarLyr08[4] 		= $threadmatch ;
+		$CuffLyr04[4] 		= $threadmatch ;
+		$ShirtLyr06[4] 		= $threadmatch ;
+		$ShirtLyr10[4] 		= $threadmatch ;
+		$ShirtLyr14[4] 		= $threadmatch ;
+		
+	
+	
+	
 }
 
 $thread_num = $_SESSION['step18'];
@@ -397,7 +447,7 @@ switch ($cuff) {
 		$CuffLyr05[3] = "SingButton-Button.";
 		$ShirtLyr12[3] = "SingButton-Outer.";
 		$ShirtLyr13[3] = "SingButton-Inner.";
-	$ShirtLyr14[3] = "SingButton-Thread.";
+	    $ShirtLyr14[3] = "SingButton-Thread.";
 		$ShirtLyr15[3] = "SingButton-Button.";
 		$ShirtLyr16[2] = "Cuff-NormRight."; 
 
@@ -480,7 +530,7 @@ switch ($cuff_style) {
 		$ShirtLyr15[2] = "Cuff-Bev";
 		break;
     case 'round':			
-		if($CuffLyr02[2] != "Neapolitan")
+		if($CuffLyr02[2] != "Neapolitan"){
 		$CuffLyr02[2] = "Rd";
 		$CuffLyr03[2] = "Rd";
 		$CuffLyr04[2] = "Rd";
@@ -489,9 +539,10 @@ switch ($cuff_style) {
 		$ShirtLyr13[2] = "Cuff-Rd";
 		$ShirtLyr14[2] = "Cuff-Rd";
 		$ShirtLyr15[2] = "Cuff-Rd";
+		}
 		break;
     case 'straight':			
-		if($CuffLyr02[2] != "Neapolitan")
+		if($CuffLyr02[2] != "Neapolitan"){
 		$CuffLyr02[2] = "Str";
 		$CuffLyr03[2] = "Str";
 		$CuffLyr04[2] = "Str";
@@ -500,6 +551,7 @@ switch ($cuff_style) {
 		$ShirtLyr13[2] = "Cuff-Str";
 		$ShirtLyr14[2] = "Cuff-Str";
 		$ShirtLyr15[2] = "Cuff-Str";
+		}
 		break;
 }
 
@@ -1092,4 +1144,7 @@ if($ShirtLyr04[5] == 'Hide')
 	$_SESSION['ShirtLyr04_hidden'] = 0;	
 	
 }
+
+
+
 ?>

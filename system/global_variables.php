@@ -387,7 +387,7 @@ $ShirtLyr12[0]	= $ShirtLyr12[1].$ShirtLyr12[2].$ShirtLyr12[3].$ShirtLyr12[4].".p
 $ShirtLyr13[1]	= "Shirt-Wide-Lyr13-";
 $ShirtLyr13[2]	= "Cuff-Str";
 $ShirtLyr13[3]	= "SingButton-Inner.";
-$ShirtLyr13[4]	= $DefaultFabric;
+$ShirtLyr13[4]	= $DefaultButton;
 $ShirtLyr13[5] 	= "Show";
 $ShirtLyr13[0]	= $ShirtLyr13[1].$ShirtLyr13[2].$ShirtLyr13[3].$ShirtLyr13[4].".png";
 

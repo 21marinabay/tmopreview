@@ -58,6 +58,13 @@ if ($handle = opendir('design/fabrics')) {
 	$(document).ready(function(){
 		showfabric('');
 
+		$(".img1").click(function(){
+		
+			var fabhtml = $(this).next().html();
+			set_value('step2_value',fabhtml);
+			
+		});
+		
 		function loadAllfabrics()
 		{
 
@@ -228,8 +235,7 @@ if ($handle = opendir('design/fabrics')) {
 						$('#'+layer).attr('src','img/transparent.png');
 					
 					} else {
-						
-						
+					
 						$('#'+layer).attr('src',data[index].path);
 						
 					}
@@ -241,7 +247,7 @@ if ($handle = opendir('design/fabrics')) {
 	
 	function showfabric(icon_num)
 	{
-				
+			
 			set_value('step2',icon_num);
 			$('#popup_content').html('');
 			
@@ -594,7 +600,7 @@ div.ui-dialog-content{
         <div class="title" style="margin-top:-15px;"> </div>
         </div>
         <div class="compartment" >
-                  <div class="fabric" style="height:420px"">
+                  <div class="fabric" style="height:420px">
               
                 <div class="slideshow" id="slideshowImage" >
                                <? $count = 1; ?>
@@ -623,7 +629,8 @@ while($row=mysql_fetch_array($query1))
                 <? if($count % 12 == 1): ?>
                       </div>
                 <? endif; ?>
-                <?} ?>
+                
+                <? } ?>
                     
                     </div>
 					

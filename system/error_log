@@ -1,0 +1,34 @@
+[16-Feb-2012 01:53:15] PHP Warning:  opendir(design/fabric) [<a href='function.opendir'>function.opendir</a>]: failed to open dir: No such file or directory in /home/sgwebho/public_html/tmo_preview/step2.php on line 2
+[16-Feb-2012 01:53:15] PHP Warning:  Invalid argument supplied for foreach() in /home/sgwebho/public_html/tmo_preview/step2.php on line 503
+[16-Feb-2012 04:41:38] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/sgwebho/public_html/tmo_preview/FabricZoomIn.php on line 381
+[16-Feb-2012 04:41:39] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/sgwebho/public_html/tmo_preview/FabricZoomIn.php on line 381
+[16-Feb-2012 04:41:42] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/sgwebho/public_html/tmo_preview/FabricZoomIn.php on line 381
+[17-Feb-2012 21:16:08] PHP Parse error:  syntax error, unexpected ':' in /home/sgwebho/public_html/tmo_preview/fullview.php on line 842
+[17-Feb-2012 21:16:09] PHP Parse error:  syntax error, unexpected ':' in /home/sgwebho/public_html/tmo_preview/fullview.php on line 842
+[17-Feb-2012 21:16:28] PHP Parse error:  syntax error, unexpected ':' in /home/sgwebho/public_html/tmo_preview/fullview.php on line 844
+[17-Feb-2012 21:17:19] PHP Parse error:  syntax error, unexpected ':' in /home/sgwebho/public_html/tmo_preview/fullview.php on line 843
+[17-Feb-2012 21:17:20] PHP Parse error:  syntax error, unexpected ':' in /home/sgwebho/public_html/tmo_preview/fullview.php on line 843
+[22-Feb-2012 02:15:54] PHP Parse error:  syntax error, unexpected ':' in /home/sgwebho/public_html/shirt_preview/fullview.php on line 693
+[22-Feb-2012 02:16:15] PHP Parse error:  syntax error, unexpected ':' in /home/sgwebho/public_html/shirt_preview/fullview.php on line 693
+[22-Feb-2012 03:34:11] PHP Parse error:  syntax error, unexpected '[' in /home/sgwebho/public_html/shirt_preview/fullview.php on line 625
+[22-Feb-2012 03:34:16] PHP Parse error:  syntax error, unexpected '[' in /home/sgwebho/public_html/shirt_preview/fullview.php on line 625
+[22-Feb-2012 12:56:11] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/sgwebho/public_html/shirt_preview/fabric_details.php on line 5
+[22-Feb-2012 12:57:47] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/sgwebho/public_html/shirt_preview/fabric_details.php on line 5
+[22-Feb-2012 12:58:16] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/sgwebho/public_html/shirt_preview/fabric_details.php on line 5
+[22-Feb-2012 12:58:25] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/sgwebho/public_html/shirt_preview/fabric_details.php on line 5
+[22-Feb-2012 13:06:24] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/sgwebho/public_html/shirt_preview/fabrics.php on line 4
+[22-Feb-2012 13:07:12] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/sgwebho/public_html/shirt_preview/fabrics.php on line 4
+[22-Feb-2012 13:07:14] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/sgwebho/public_html/shirt_preview/fabrics.php on line 4
+[22-Feb-2012 13:07:15] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/sgwebho/public_html/shirt_preview/fabrics.php on line 4
+[24-May-2012 00:47:45] PHP Parse error:  syntax error, unexpected '}' in /home/sgwebho/public_html/tmopreview/fabrics.php on line 20
+[25-May-2012 21:27:44] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/sgwebho/public_html/tmopreview/fabrics1.php on line 511
+[25-May-2012 21:30:07] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home/sgwebho/public_html/tmopreview/fabrics1.php on line 511
+[26-May-2012 08:54:44] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'sgwebho'@'localhost' (using password: NO) in /home/sgwebho/public_html/tmopreview/ajaxcallAllfabrics.php on line 4
+[26-May-2012 08:54:44] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/sgwebho/public_html/tmopreview/ajaxcallAllfabrics.php on line 4
+[26-May-2012 08:54:44] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/sgwebho/public_html/tmopreview/ajaxcallAllfabrics.php on line 5
+[26-May-2012 08:55:00] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'sgwebho'@'localhost' (using password: NO) in /home/sgwebho/public_html/tmopreview/ajaxcallAllfabrics.php on line 4
+[26-May-2012 08:55:00] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/sgwebho/public_html/tmopreview/ajaxcallAllfabrics.php on line 4
+[26-May-2012 08:55:00] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/sgwebho/public_html/tmopreview/ajaxcallAllfabrics.php on line 5
+[26-May-2012 08:56:37] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'sgwebho'@'localhost' (using password: NO) in /home/sgwebho/public_html/tmopreview/ajaxcallAllfabrics.php on line 4
+[26-May-2012 08:56:37] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/sgwebho/public_html/tmopreview/ajaxcallAllfabrics.php on line 4
+[26-May-2012 08:56:37] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/sgwebho/public_html/tmopreview/ajaxcallAllfabrics.php on line 5

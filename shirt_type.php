@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?
 $section = 1;
 $point = 1;
@@ -44,6 +45,34 @@ $point = 1;
 </style>
 	<script>
 
+var xmlhttp = false;
+//Check if we are using IE.
+try {
+//If the Javascript version is greater than 5.
+xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+//alert ("You are using Microsoft Internet Explorer.");
+} catch (e) {
+//If not, then use the older active x object.
+try {
+//If we are using Internet Explorer.
+xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+//alert ("You are using Microsoft Internet Explorer");
+} catch (E) {
+//Else we must be using a non-IE browser.
+xmlhttp = false;
+}
+}
+//If we are using a non-IE browser, create a javascript instance of the object.
+if (!xmlhttp && typeof XMLHttpRequest != 'undefined') {
+xmlhttp = new XMLHttpRequest();
+//alert ("You are not using Microsoft Internet Explorer");
+}
+
+
+
+
+
+
 	$(document).ready(function(){
 		updateRender('','Regular');	
 		
@@ -77,13 +106,54 @@ $point = 1;
 	
 	function showshirt(id,fit)
 	{
-			alert(id);
 			set_value('step1a',fit);
 			set_value('step1b',id);
 			updateRender(id,fit);
-			
+if(id=='Short')
+{
+var serverPage = "sessionShort.php";
+xmlhttp.open("GET",serverPage);
+xmlhttp.onreadystatechange = function() {
+if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+
+}}
+
+}
+        	
 	}
 
+
+$("#short").click(function(){
+			
+		
+			});
+$("#long").click(function(){
+			
+			loadLong();
+			});
+$("#cuffshort").click(function(){
+			
+			loadCuffshort();
+			});
+  
+function loadShort()
+{
+/*
+xmlhttp.open("GET",'sessionShort.php');
+xmlhttp.onreadystatechange = function() {
+if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {*/
+
+
+}
+function loadLong()
+{
+$('#long').load('sessionLong.php');
+}
+function loadCuffshort()
+{
+$('#cuffshort').load('sessionCuffShort.php');
+}
+        
 	function updateRender(id,fit)
 	{
 			$('#loading').fadeIn('slow');
@@ -207,13 +277,13 @@ $point = 1;
                   <div style="clear:both;"></div>
                   <div class="compartment">
                     <div class="title">Sleeve</div>
-                    <div style="text-align:center;width:110px;height:155px;" class="section" onclick="showshirt('Long');"><img title="long.png" class="Sleeveimg1" src="design/shirt_type/sleeve/long sleeve.jpg" onmouseover="this.src='design/shirt_type/sleeve/long sleeve-select.jpg'"  onmouseout="this.src='design/shirt_type/sleeve/long sleeve.jpg'">
+                    <div style="text-align:center;width:110px;height:155px;" class="section" onclick="showshirt('Long');" ><img title="long.png" class="Sleeveimg1" src="design/shirt_type/sleeve/long sleeve.jpg" onmouseover="this.src='design/shirt_type/sleeve/long sleeve-select.jpg'" id="long"  onmouseout="this.src='design/shirt_type/sleeve/long sleeve.jpg'" onclick>
                       <div style="">long</div>
                     </div>
-                    <div style="text-align:center;width:110px;height:155px;" class="section" onclick="showshirt('Short');"><img title="short-sleeve.png" class="Sleeveimg4" src="design/shirt_type/sleeve/short-sleeve.jpg" onmouseover="this.src='design/shirt_type/sleeve/short sleeve-select.jpg'"  onmouseout="this.src='design/shirt_type/sleeve/short-sleeve.jpg'">
+                    <div style="text-align:center;width:110px;height:155px;" class="section" onclick="showshirt('Short');" id="short"><img title="short-sleeve.png" class="Sleeveimg4"  src="design/shirt_type/sleeve/short-sleeve.jpg" onmouseover="this.src='design/shirt_type/sleeve/short sleeve-select.jpg'"  onmouseout="this.src='design/shirt_type/sleeve/short-sleeve.jpg'">
                       <div style="">short</div>
                     </div>
-                    <div style="text-align:center;width:110px;height:155px;" class="section" onclick="showshirt('Short with normal cuff');"><img title="short-with-normal-cuff.png" class="Sleeveimg3" src="design/shirt_type/sleeve/short cuff.jpg" onmouseover="this.src='design/shirt_type/sleeve/short cuff-select.jpg'"  onmouseout="this.src='design/shirt_type/sleeve/short cuff.jpg'">
+                    <div style="text-align:center;width:110px;height:155px;" class="section" onclick="showshirt('Short with normal cuff');"><img title="short-with-normal-cuff.png" class="Sleeveimg3" src="design/shirt_type/sleeve/short cuff.jpg" onmouseover="this.src='design/shirt_type/sleeve/short cuff-select.jpg'" id="cuffshort"  onmouseout="this.src='design/shirt_type/sleeve/short cuff.jpg'">
                       <div style="">short with normal cuff</div>
                     </div>
                   </div>

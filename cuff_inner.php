@@ -332,7 +332,7 @@ float:right;
                 <? endif; ?>
                 <div class="imageBox"><img  style="" src="design/fabrics/<? print $newWord;?>" class="img1"  title="<? print $row['Label'];?>" onClick="showfabric('<? print $newFabric; ?>');return false;" />
                           <div id="imageTitle2" style="margin-top:15px;"><? print $row['Label'];?><br />
-                          $<? print $row['Base Cost']; ?>
+                          $<? print $row['Cuff Contrast Cost']; ?>
                           </div>
                           </div>
                           
