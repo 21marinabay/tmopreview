@@ -1,13 +1,10 @@
 <?
 include('system/config.php');
-
 $section = 3;
 $point = 3;
 $layer = 5;
-$script = 'DisplayCuff.php';
 $folder = 'Fabric';
-
-echo $_SESSION['shirttype'];
+$script = 'DisplayCuff.php';
 
 $sql1 = 'select * from fabricsnew order by DisplaySequence asc';
 $e = $db->getAll($sql1);
@@ -114,15 +111,15 @@ if ($handle = opendir('design/fabrics')) {
 			
 				$.each(data, function(index, itemData) {
 					var layer = 'lay' + data[index].layer;
-				
+
 					if(data[index].path == 'img/Shirt/')
 					{	
 				
 						$('#'+layer).attr('src','img/transparent.png');
 					
 					} else {
+						//alert(layer+" = "+data[index].path);
 						$('#'+layer).attr('src',data[index].path);
-						
 					}
 					
 				});
@@ -144,6 +141,13 @@ if ($handle = opendir('design/fabrics')) {
 
 	function updateRender_preview(icon_num)
 	{
+			<?php 
+			if ( strtolower($_SESSION['step1b']) == 'short with normal cuff' )
+			{
+				$script = 'DisplayCuffShort.php';
+			}
+			?>
+			
 			$('#loading').fadeIn('slow');
 		
 			$.getJSON('system/modules/<?=$script?>',{}
@@ -156,12 +160,15 @@ if ($handle = opendir('design/fabrics')) {
 				$.each(data, function(index, itemData) {
 					var layer = 'layf' + data[index].layer;
 			
-					if(data[index].path == 'img/<?=$folder?>/')
+					if(data[index].path == 'img/Shirt/')
 					{	
 				
-						$('#'+layer).attr('src','img/transparent.png');
+						//$('#'+layer).attr('src','img/transparent.png');
+						//alert(layer+" = "+data[index].path);
+						$('#'+layer).attr('src',data[index].path);
 					
 					} else {
+						alert(layer+" = "+data[index].path);
 						$('#'+layer).attr('src',data[index].path);
 						
 					}

@@ -114,6 +114,7 @@ if ($handle = opendir('design/cuff')) {
 						$('#'+layer).attr('src','img/transparent.png');
 					
 					} else {
+						
 						$('#'+layer).attr('src',data[index].path);
 						
 					}
@@ -192,7 +193,7 @@ if ($handle = opendir('design/cuff')) {
 						$('#'+layer).attr('src','img/transparent.png');
 					
 					} else {
-					
+						alert(data[index].path);
 						$('#'+layer).attr('src',data[index].path);
 						
 					}

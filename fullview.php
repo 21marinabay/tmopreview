@@ -72,8 +72,8 @@ switch ($type) {
     case 'short with normal cuff':
 		$ShirtLyr05[3] = "NarrowCuffShortSleeve.";
 		$ShirtLyr05[5] = "Show";
-		$ShirtLyr12[5] = "Hide";
-		$ShirtLyr13[5] = "Hide";
+		$ShirtLyr12[5] = "Show";
+		$ShirtLyr13[5] = "Show";
 		$ShirtLyr14[5] = "Hide";
 		$ShirtLyr15[5] = "Hide";
 		$ShirtLyr16[5] = "Hide";
@@ -294,50 +294,57 @@ if($icon_num != '')
 	
 	
 	$query = "SELECT * FROM fabricsnew WHERE Filename like '%".$_SESSION['step2']."%'";
-	//print($query);
-	//error_log($query);
 	$d = $db->getAll($query);
+	$ButtonMatch  = $d[0]['MatchingButtonIconNum'];
 	
-		$ButtonMatch  = $d[0]['MatchingButtonIconNum'];
-		//print($ButtonMatch);
-		$_SESSION['step5'] = $d[0]['MatchingButtonIconNum'];
-		$query1 = "SELECT * FROM Buttonsnew WHERE `Icon Number` like '%".$_SESSION['step5']."%'";
-		$d1 = $db->getAll($query1);
-		$_SESSION['step5_html'] = $d1[0]['Label'].' <br> $'.$d1[0]['Cost'];
-		
+	$button = $_SESSION['step5'];
+	if($button != '')
+	{
+		//print("sessionbutton::".$button);
+		$ButtonMatch  = $button ;
+	}
 	
-		$ButtonLyr03[4]		= $ButtonMatch ;
-		$PlacketLyr04[4]		= $ButtonMatch ;
-		$PlacketContrastLyr06[4]	= $ButtonMatch ;
-		$TieFixLyr05[4] 		= $ButtonMatch ;
-		$CollarLyr07[4] 		= $ButtonMatch ; 
-		$CollarLyr09[4] 		= $ButtonMatch ;
-		$CuffLyr05[4] 		= $ButtonMatch ;
-		$ShirtLyr07[4] 		= $ButtonMatch ;
-		
-		$ShirtLyr11[4] 		= $ButtonMatch ;
-		$ShirtLyr15[4] 		= $ButtonMatch ;
-		
-		
+	$query1 = "SELECT * FROM Buttonsnew WHERE `Icon Number` like '%".$ButtonMatch."%'";
+	$d1 = $db->getAll($query1);
+	$_SESSION['step5_html'] = $d1[0]['Label'].' <br> $'.$d1[0]['Cost'];
+	
+	$ButtonLyr03[4]		= $ButtonMatch ;
+	$PlacketLyr04[4]		= $ButtonMatch ;
+	$PlacketContrastLyr06[4]	= $ButtonMatch ;
+	$TieFixLyr05[4] 		= $ButtonMatch ;
+	$CollarLyr07[4] 		= $ButtonMatch ; 
+	$CollarLyr09[4] 		= $ButtonMatch ;
+	$CuffLyr05[4] 		= $ButtonMatch ;
+	$ShirtLyr07[4] 		= $ButtonMatch ;
+	$ShirtLyr11[4] 		= $ButtonMatch ;
+	$ShirtLyr15[4] 		= $ButtonMatch ;
 	
 	
-		
-		$threadmatch = $d[0]['MatchingThreadIconNum'];
-		
-		print($threadmatch);
-		
-		
-		$ButtonLyr02[4]		= $threadmatch ;
-		$PlacketLyr03[4]		= $threadmatch ;
-		$PlacketContrastLyr05[4] = $threadmatch ;
-		$TieFixLyr04[4] 		= $threadmatch ;
-		$CollarLyr06[4] 		= $threadmatch ;
-		$CollarLyr08[4] 		= $threadmatch ;
-		$CuffLyr04[4] 		= $threadmatch ;
-		$ShirtLyr06[4] 		= $threadmatch ;
-		$ShirtLyr10[4] 		= $threadmatch ;
-		$ShirtLyr14[4] 		= $threadmatch ;
-		
+	$threadmatch = $d[0]['MatchingThreadIconNum'];
+	
+	$thread_num = $_SESSION['step18'];
+	if($button != '')
+	{
+		//print("sessionthread::".$thread_num);
+		$threadmatch  = $thread_num ;
+	}
+	
+	//$_SESSION['step18'] = $threadmatch;
+	$query1 = "SELECT * FROM threads WHERE `Icon Number` like '%".$threadmatch."%'";
+	$d1 = $db->getAll($query1);
+	$_SESSION['step18_html'] = $d1[0]['label'].' <br> $'.$d1[0]['Cost'];
+	
+	$ButtonLyr02[4]		= $threadmatch ;
+	$PlacketLyr03[4]		= $threadmatch ;
+	$PlacketContrastLyr05[4] = $threadmatch ;
+	$TieFixLyr04[4] 		= $threadmatch ;
+	$CollarLyr06[4] 		= $threadmatch ;
+	$CollarLyr08[4] 		= $threadmatch ;
+	$CuffLyr04[4] 		= $threadmatch ;
+	$ShirtLyr06[4] 		= $threadmatch ;
+	$ShirtLyr10[4] 		= $threadmatch ;
+	$ShirtLyr14[4] 		= $threadmatch ;
+	 
 	
 	
 	
@@ -572,6 +579,8 @@ if($button != '')
 	$ShirtLyr07[4] = $button; 
 	$ShirtLyr11[4] = $button;
 	$ShirtLyr15[4] = $button; 
+	
+	
 		
 }
 
@@ -774,11 +783,15 @@ $cuff_outer = $_SESSION['step13'];
 if($cuff_outer == '')
 	$cuff_outer = $_SESSION['step2'];
 
-if($cuff_outer != '')
+if(strtolower($_SESSION['step1b']) == 'short with normal cuff' && $cuff_outer != '')
 {
-	$CuffLyr02[4] = $cuff_outer;	 
+	$ShirtLyr12[2] = "Cuff-Short";
+	$ShirtLyr12[3] = "-Outer.";
 	$ShirtLyr12[4] = $cuff_outer;
-	$ShirtLyr16[4] = $cuff_outer;
+}
+else if($cuff_outer != '')
+{
+	$ShirtLyr12[4] = $cuff_outer;
 }
 
 
@@ -787,9 +800,15 @@ $cuff_inner = $_SESSION['step14'];
 if($cuff_inner == '')
 	$cuff_inner = $_SESSION['step2'];
 
-if($cuff_inner != '')
+if(strtolower($_SESSION['step1b']) == 'short with normal cuff' && $cuff_inner != '')
 {
-	$CuffLyr03[4] = $cuff_inner;	 
+	$ShirtLyr13[2] = "Cuff-Short";
+	$ShirtLyr13[3] = "-Inner.";
+	$ShirtLyr13[4] = $cuff_inner;
+}
+else if($cuff_inner != '')
+{
+	$CuffLyr03[4] = $cuff_inner;
 	$ShirtLyr13[4] = $cuff_inner;
 }
 

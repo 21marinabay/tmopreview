@@ -235,7 +235,9 @@ if ($handle = opendir('design/fabrics')) {
 						$('#'+layer).attr('src','img/transparent.png');
 					
 					} else {
-					
+
+						
+						//alert(data[index].path);
 						$('#'+layer).attr('src',data[index].path);
 						
 					}
@@ -345,6 +347,7 @@ while($row=mysql_fetch_array($query1))
 						$('#'+layer).attr('src','img/transparent.png');
 					
 					} else {
+						
 						$('#'+layer).attr('src',data[index].path);
 						
 					}

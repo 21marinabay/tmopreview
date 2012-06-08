@@ -109,50 +109,9 @@ xmlhttp = new XMLHttpRequest();
 			set_value('step1a',fit);
 			set_value('step1b',id);
 			updateRender(id,fit);
-if(id=='Short')
-{
-var serverPage = "sessionShort.php";
-xmlhttp.open("GET",serverPage);
-xmlhttp.onreadystatechange = function() {
-if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-
-}}
-
-}
         	
 	}
 
-
-$("#short").click(function(){
-			
-		
-			});
-$("#long").click(function(){
-			
-			loadLong();
-			});
-$("#cuffshort").click(function(){
-			
-			loadCuffshort();
-			});
-  
-function loadShort()
-{
-/*
-xmlhttp.open("GET",'sessionShort.php');
-xmlhttp.onreadystatechange = function() {
-if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {*/
-
-
-}
-function loadLong()
-{
-$('#long').load('sessionLong.php');
-}
-function loadCuffshort()
-{
-$('#cuffshort').load('sessionCuffShort.php');
-}
         
 	function updateRender(id,fit)
 	{
@@ -278,13 +237,13 @@ $('#cuffshort').load('sessionCuffShort.php');
                   <div class="compartment">
                     <div class="title">Sleeve</div>
                     <div style="text-align:center;width:110px;height:155px;" class="section" onclick="showshirt('Long');" ><img title="long.png" class="Sleeveimg1" src="design/shirt_type/sleeve/long sleeve.jpg" onmouseover="this.src='design/shirt_type/sleeve/long sleeve-select.jpg'" id="long"  onmouseout="this.src='design/shirt_type/sleeve/long sleeve.jpg'" onclick>
-                      <div style="">long</div>
+                      <div style="">Long</div>
                     </div>
                     <div style="text-align:center;width:110px;height:155px;" class="section" onclick="showshirt('Short');" id="short"><img title="short-sleeve.png" class="Sleeveimg4"  src="design/shirt_type/sleeve/short-sleeve.jpg" onmouseover="this.src='design/shirt_type/sleeve/short sleeve-select.jpg'"  onmouseout="this.src='design/shirt_type/sleeve/short-sleeve.jpg'">
-                      <div style="">short</div>
+                      <div style="">Short</div>
                     </div>
                     <div style="text-align:center;width:110px;height:155px;" class="section" onclick="showshirt('Short with normal cuff');"><img title="short-with-normal-cuff.png" class="Sleeveimg3" src="design/shirt_type/sleeve/short cuff.jpg" onmouseover="this.src='design/shirt_type/sleeve/short cuff-select.jpg'" id="cuffshort"  onmouseout="this.src='design/shirt_type/sleeve/short cuff.jpg'">
-                      <div style="">short with normal cuff</div>
+                      <div style="">Short with Narrow Cuff</div>
                     </div>
                   </div>
                   <div style="clear:both;"></div>

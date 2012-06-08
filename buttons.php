@@ -1,6 +1,8 @@
 <?
 include('system/config.php');
 
+
+
 $section = 2;
 $point = 1;
 $layer = 5;
@@ -29,6 +31,7 @@ if ($handle = opendir('design/buttons')) {
 	
     closedir($handle);
 }
+sort($filename);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -52,6 +55,17 @@ if ($handle = opendir('design/buttons')) {
 
 	$(document).ready(function(){
 		showbutton('');	
+		
+	  $(".img1").click(function(){
+		
+			var fabhtml = $(this).next().html();
+		
+			set_value('step5_html',fabhtml);
+			
+		});
+		
+		
+		
 		
 		$("#details").click(function(){
 
@@ -89,6 +103,7 @@ if ($handle = opendir('design/buttons')) {
 	{
 			$('#loading').fadeIn('slow');
 
+			
 			$.getJSON('fullview.php',{}
 			,function(data)
 			{
@@ -105,6 +120,7 @@ if ($handle = opendir('design/buttons')) {
 						$('#'+layer).attr('src','img/transparent.png');
 					
 					} else {
+						alert(data[index].path);
 						$('#'+layer).attr('src',data[index].path);
 						
 					}
@@ -118,7 +134,6 @@ if ($handle = opendir('design/buttons')) {
 	{
 			
 			set_value('step5',button);
-			
 			updateRender(button);
 			updateRender_preview(button);
 	}
@@ -145,6 +160,7 @@ if ($handle = opendir('design/buttons')) {
 						$('#'+layer).attr('src','img/transparent.png');
 					
 					} else {
+						
 						$('#'+layer).attr('src',data[index].path);
 						
 					}

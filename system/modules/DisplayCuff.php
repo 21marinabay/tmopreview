@@ -283,6 +283,8 @@ if($CuffLyr05[5]=="Show")
 
 
 
+
+
 $output = json_encode($d);
 
 print $output;
