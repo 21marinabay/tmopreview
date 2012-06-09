@@ -252,7 +252,7 @@ xmlhttp = new XMLHttpRequest();
                     <ol>
                       <li style="background-color:white;"><a style="background-color:white;color:black;" href="#" id="reset" onclick="reset();return false;">Reset Sample</a></li>
                       <li><a href="#" id="details" onclick="return false;">Details</a></li>
-                      <li><a href="#">Add To Cart</a></li>
+                      <li><a href="measure1.php">Proceed To Order</a></li>
                       <ol>
                       </ol>
                     </ol>

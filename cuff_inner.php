@@ -120,7 +120,7 @@ if ($handle = opendir('design/fabrics')) {
 					
 					} else {
 						$('#'+layer).attr('src',data[index].path);
-						
+				
 					}
 					
 				});
@@ -142,6 +142,13 @@ if ($handle = opendir('design/fabrics')) {
 	{
 			$('#loading').fadeIn('slow');
 		
+			<?php 
+			if ( strtolower($_SESSION['step1b']) == 'short with normal cuff' )
+			{
+				$script = 'DisplayCuffShort.php';
+			}
+			?>
+
 			$.getJSON('system/modules/<?=$script?>',{}
 			,function(data)
 			{
@@ -159,7 +166,6 @@ if ($handle = opendir('design/fabrics')) {
 					
 					} else {
 						$('#'+layer).attr('src',data[index].path);
-						
 					}
 					
 				});
@@ -352,7 +358,7 @@ float:right;
                   <ol>
                   <li style="background-color:white;"><a id="reset" href="#" style="background-color:white;color:black;" onclick="reset();return false;">Reset Sample</a></li>
                   <li><a href="#" id="details" onclick="return false;">Details</a></li>
-                  <li><a href="#">Add To Cart</a></li>
+                  <li><a href="measure1.php">Proceed To Order</a></li>
                   <ol>
                   <div style="clear:both;"></div>
                   </div>

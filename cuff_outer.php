@@ -118,7 +118,6 @@ if ($handle = opendir('design/fabrics')) {
 						$('#'+layer).attr('src','img/transparent.png');
 					
 					} else {
-						//alert(layer+" = "+data[index].path);
 						$('#'+layer).attr('src',data[index].path);
 					}
 					
@@ -159,16 +158,13 @@ if ($handle = opendir('design/fabrics')) {
 			
 				$.each(data, function(index, itemData) {
 					var layer = 'layf' + data[index].layer;
-			
-					if(data[index].path == 'img/Shirt/')
+				
+					if(data[index].path == 'img/<?=$folder?>/')
 					{	
 				
-						//$('#'+layer).attr('src','img/transparent.png');
-						//alert(layer+" = "+data[index].path);
-						$('#'+layer).attr('src',data[index].path);
+						$('#'+layer).attr('src','img/transparent.png');
 					
 					} else {
-						alert(layer+" = "+data[index].path);
 						$('#'+layer).attr('src',data[index].path);
 						
 					}
@@ -359,7 +355,7 @@ float:right;
                   <ol>
                   <li style="background-color:white;"><a id="reset" href="#" style="background-color:white;color:black;" onclick="reset();return false;">Reset Sample</a></li>
                   <li><a href="#" id="details" onclick="return false;">Details</a></li>
-                  <li><a href="#">Add To Cart</a></li>
+                  <li><a href="measure1.php">Proceed To Order</a></li>
                   <ol>
                   <div style="clear:both;"></div>
                   </div>

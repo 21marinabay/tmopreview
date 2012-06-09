@@ -1,7 +1,7 @@
 <?
 include('system/config.php');?>
 <? $count = 1; ?>
-                <? $all = 'select * from fabricsnew order by DisplaySequence asc';
+                <? $all = 'select * from fabricsnew LIMIT 1 , 12';
 				$query1 = mysql_query($all);
 while($row=mysql_fetch_array($query1))
 {	
@@ -13,7 +13,7 @@ while($row=mysql_fetch_array($query1))
                                         $newWord = $newId.$restofId.'jpg';
 				?>
                 <? if($count % 12 == 1): ?>
-                      <div class ="slide" style="border:1px solid green;">
+                      <div class ="slide">
                 <? endif; ?>
                 <div class="imageBox"><img  style="" src="design/fabrics/<? print $newWord;?>" class="img1"  title="<? print $row['Label'];?>" onClick="showfabric('<? print $newWord; ?>');" />
                           <div id="imageTitle2" style="margin-top:15px;"><? print $row['Label'];?><br />

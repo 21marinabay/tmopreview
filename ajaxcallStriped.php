@@ -1,7 +1,7 @@
 <?
 include('system/config.php');?>
 <? $count = 1; 
-              $all = "select * from fabricsnew where Pattern='Striped'";
+              $all = "select * from fabricsnew where Pattern='Striped' LIMIT 1 , 12";
 $query = $db->getAll($all); 
 $query1 = mysql_query($all);
 while($row=mysql_fetch_array($query1))
@@ -11,12 +11,12 @@ while($row=mysql_fetch_array($query1))
 					$id = $row['Filename'];
 					$newId = substr($id,0,6);
                                         $restofId = substr($id,22,6);
-                                        $newWord = $newId.$restofId.'jpg';
+                                        $newWord = $newId.$restofId.'jpg'; $newFabric = substr($id,23,4);
 				?>
                 <? if($count % 12 == 1): ?>
                       <div class ="slide">
                 <? endif; ?>
-                <div class="imageBox"><img  style="" src="design/fabrics/<? print $newWord;?>" class="img1"  title="<? print $row['Label'];?>" onClick="showfabric('<? print $newWord; ?>');" />
+                <div class="imageBox"><img  style="" src="design/fabrics/<? print $newWord;?>" class="img1"  title="<? print $row['Label'];?>" onClick="showfabric('<? print $newFabric; ?>');" />
                           <div id="imageTitle2" style="margin-top:15px;"><? print $row['Label'];?><br />
                           $<? print $row['Base Cost']; ?>
                           </div>

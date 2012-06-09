@@ -38,8 +38,23 @@
 <? endif; ?>
 
 <? if($section == 5): ?>
-<img src="images/m1.jpg" />
+<ul class="">
+  <li class="<?=($point == 1) ? 'active':''?>"><a href="measure1.php"><img src="images/m1_cut.jpg" /></a></li>
+  <li class="<?=($point == 2) ? 'active':''?>"><a href="measure2.php"><img src="images/m2_full.jpg" /></a></li>
+  <li class="<?=($point == 3) ? 'active':''?>"><a href="measure3.php"><img src="images/m3_full.jpg" /></a></li>
+</ul>
 <? endif; ?>
 <? if($section == 6): ?>
-<img src="images/m2.jpg" />
+<ul class="">
+  <li class="<?=($point == 1) ? 'active':''?>"><a href="measure1.php"><img src="images/m1_full.jpg" /></a></li>
+  <li class="<?=($point == 2) ? 'active':''?>"><a href="measure2.php"><img src="images/m2_cut.jpg" /></a></li>
+  <li class="<?=($point == 3) ? 'active':''?>"><a href="measure3.php"><img src="images/m3_full.jpg" /></a></li>
+</ul>
+<? endif; ?>
+<? if($section == 7): ?>
+<ul class="">
+  <li class="<?=($point == 1) ? 'active':''?>"><a href="measure1.php"><img src="images/m1_full.jpg" /></a></li>
+  <li class="<?=($point == 2) ? 'active':''?>"><a href="measure2.php"><img src="images/m2_full.jpg" /></a></li>
+  <li class="<?=($point == 3) ? 'active':''?>"><a href="measure3.php"><img src="images/m3_cut.jpg" /></a></li>
+</ul>
 <? endif; ?>

@@ -51,7 +51,7 @@ switch ($collar) {
 		$ShirtLyr10[3] = "Fullspread-Thread.";	
 		$ShirtLyr11[3] = "Fullspread-Button.";
         break;
-    case 'semi cut away':
+    case 'cut away':
 	
 		$CollarLyr04[2] = "Norm";
 		$CollarLyr05[2] = "Norm"; 

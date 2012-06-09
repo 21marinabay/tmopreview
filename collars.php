@@ -60,6 +60,8 @@ if ($handle = opendir('design/collar')) {
 
 	$(document).ready(function(){
 		showCollar();	
+		updateStayFitness('<?php echo $_SESSION['step3'];?>');
+		
 		
 		$("#details").click(function(){
 
@@ -67,13 +69,13 @@ if ($handle = opendir('design/collar')) {
 			$("body").append('<div class="modalOverlay">');
 			
 				$.ajax({
-		  url: 'details.php',
-		  cache: false,
-		  async: false,
-		  success: function(html){
-			$('#details_c').html(html);
-		}
-		});
+				  url: 'details.php',
+				  cache: false,
+				  async: false,
+				  success: function(html){
+					$('#details_c').html(html);
+				}
+				});
 
 
 			$("#detailsZoom").dialog({
@@ -124,35 +126,63 @@ if ($handle = opendir('design/collar')) {
 	function updateStayFitness(collar)
 	{
 		//Unset radio button for all Stay & Stiffness
-		$(".collar_height li input:radio").removeAttr("checked");		
+		//$(".collar_height li input:radio").removeAttr("checked");		
 		
 		//Change color & enable to original on click of collor		
 		$('input:radio').attr('disabled', false);
 		$(".collar_height li").css("color","#555555");
-		
+
+		var stayval;
+		var stiffnessval;
+		var heightval ;
+
+		set_value('step3',collar);
+	  
 		//Perform actions on click of each collor
 		switch(collar){
 		
 			case 'business':
+				$("#height1").attr("checked","checked");
 				$("#stay3").attr("checked","checked");
 				$("#stiffness2").attr("checked","checked");
+
+				heightval  = $("#height1").val();
+				stayval 	= $("#stay3").val();
+				stiffnessval= $("#stiffness2").val();
 			break;
 			
 			case 'full-spread':
+
+				$("#height1").attr("checked","checked");
 				$("#stay3").attr("checked","checked");
 				$("#stiffness2").attr("checked","checked");
+
+				heightval  = $("#height1").val();
+				stayval 	= $("#stay3").val();
+				stiffnessval= $("#stiffness2").val();
 			break;
 			
 			case 'semi cut away':
+
+				$("#height1").attr("checked","checked");
 				$("#stay3").attr("checked","checked");
 				$("#stiffness2").attr("checked","checked");
+
+				heightval  = $("#height1").val();
+				stayval 	= $("#stay3").val();
+				stiffnessval= $("#stiffness2").val();
 			break;
 			
 			case 'mini':			
 				//To disable radio button and text
 				$("#height2").removeAttr("checked");
 				$("#height2").attr("disabled","disabled");
+
+				$("#height1").attr("checked","checked");
+				$("#height1").attr("enable","checked");
 				$(".liheight2").css("color","#CCC");
+
+
 				
 				$("#stay2").attr("disabled","disabled");
 				$(".listay2").css("color","#CCC");
@@ -160,19 +190,29 @@ if ($handle = opendir('design/collar')) {
 				//For selecting radio button				
 				$("#stay3").attr("checked","checked");
 				$("#stiffness2").attr("checked","checked");				
+
+				heightval  = "" ;
+				stayval 	= $("#stay3").val();
+				stiffnessval= $("#stiffness2").val();
 			break;
 			
 			case 'long sleeve':
-			
+
+				$("#height1").attr("checked","checked");
 				$("#stay2").attr("disabled","disabled");
 				$(".listay2").css("color","#CCC");
 
 				$("#stay1").attr("checked","checked");
 				$("#stiffness2").attr("checked","checked");
+
+				heightval  = $("#height1").val();
+				stayval 	= $("#stay1").val();
+				stiffnessval= $("#stiffness2").val();
 			break;
 			
 			case 'button down':
-				
+
+				$("#height1").attr("checked","checked");
 				$("#stay2").attr("disabled","disabled");
 				$(".listay2").css("color","#CCC");
 				$("#stay3").attr("disabled","disabled");
@@ -182,27 +222,50 @@ if ($handle = opendir('design/collar')) {
 				$("#stiffness3").attr("disabled","disabled");
 				$(".listiffness3").css("color","#CCC");
 				
+
 				
 				$("#stay1").attr("checked","checked");
 				$("#stiffness1").attr("checked","checked");
+
+
+				heightval  = $("#height1").val();
+				stayval 	= $("#stay1").val();
+				stiffnessval= $("#stiffness1").val();
 			break;
 
 			case 'hidden button down':
+
+				$("#height1").attr("checked","checked");
 				$("#stay2").attr("disabled","disabled");
 				$(".listay2").css("color","#CCC");
 
 				$("#stay1").attr("checked","checked");
 				$("#stiffness1").attr("checked","checked");
+
+				heightval  = $("#height1").val();
+				stayval 	= $("#stay1").val();
+				stiffnessval= $("#stiffness1").val();
 			break;
 			
 			case 'round':
+
+				$("#height1").attr("checked","checked");
 				$("#stay3").attr("checked","checked");
 				$("#stiffness2").attr("checked","checked");
+
+
+				heightval  = $("#height1").val();
+				stayval 	= $("#stay3").val();
+				stiffnessval= $("#stiffness2").val();
 			break;
 			
 			case 'mandarin':
+
+				
 				$("#height2").removeAttr("checked");
 				$("#height2").attr("disabled","disabled");
+				$("#height1").attr("checked","checked");
+				$("#height1").attr("enable","checked");
 				$(".liheight2").css("color","#CCC");
 				$("#stay2").attr("disabled","disabled");
 				$(".listay2").css("color","#CCC");
@@ -211,11 +274,19 @@ if ($handle = opendir('design/collar')) {
 
 				$("#stay1").attr("checked","checked");
 				$("#stiffness2").attr("checked","checked");
+
+				heightval  = $("#height1").val();
+				stayval 	= $("#stay1").val();
+				stiffnessval= $("#stiffness2").val();
 			break;
 			
     		case 'wing':
+
+    			$("#height1").attr("checked","checked");
 				$("#height2").removeAttr("checked");
 				$("#height2").attr("disabled","disabled");
+				$("#height1").attr("checked","checked");
+				$("#height1").attr("enable","checked");
 				$(".liheight2").css("color","#CCC");
 				$("#stay2").attr("disabled","disabled");
 				$(".listay2").css("color","#CCC");
@@ -226,22 +297,46 @@ if ($handle = opendir('design/collar')) {
 
 				$("#stay1").attr("checked","checked");
 				$("#stiffness2").attr("checked","checked");			
+
+				heightval  = $("#height1").val();
+				stayval 	= $("#stay1").val();
+				stiffnessval= $("#stiffness2").val();
 			break;
 			
 			case 'tap':
+				
 				$("#height2").removeAttr("checked");
 				$("#height2").attr("disabled","disabled");
+				$("#height1").attr("checked","checked");
+				$("#height1").attr("enable","checked");
+				
 				$(".liheight2").css("color","#CCC");
 			
 				$("#stay3").attr("checked","checked");
 				$("#stiffness2").attr("checked","checked");
+
+				heightval  = $("#height1").val();
+				stayval 	= $("#stay3").val();
+				stiffnessval= $("#stiffness2").val();
 			break;
 				
 			default:
-				$("#stay2").attr("checked","checked");
+
+				$("#height1").attr("checked","checked");
+				$("#stay3").attr("checked","checked");
 				$("#stiffness2").attr("checked","checked");
+				$("#height1").attr('checked','checked');		
+
+				heightval  = $("#height1").val();
+				stayval 	= $("#stay3").val();
+				stiffnessval= $("#stiffness2").val();
 			break;
-		}	
+		}
+
+		set_value('step3_heightval',heightval);
+		set_value('step3_stayval',stayval);
+		set_value('step3_stiffnessval',stiffnessval);
+		
 		
 	}
 	
@@ -285,7 +380,7 @@ if ($handle = opendir('design/collar')) {
 						$('#'+layer).attr('src','img/transparent.png');
 					
 					} else {
-					
+						
 						$('#'+layer).attr('src',data[index].path);
 						
 					}
@@ -406,7 +501,7 @@ Shopping cart $0.00 (0)
 
 
 </style>
-              <div style="height:815px;" class="toolbox">
+              <div style="height:auto;" class="toolbox">
 		
 		  <div class="compartment2">
 			<div class="title2">TOTAL COST <span style="float:right" id="total"></span></div>
@@ -438,10 +533,10 @@ Shopping cart $0.00 (0)
 			<ul class="collar_height">
 				
 				<li class="liheight1">
-					<input type="radio" low="Low" checked="checked" value="1" name="height" id="height1" onclick="setheight('normal');">Normal
+					<input type="radio" low="Low" checked="checked" value="1" name="height" id="height1" onclick="setheight('normal');" value="Normal" />Normal
 				</li>
 				<li class="liheight2">
-					<input type="radio" low="Low" checked="checked" value="1" name="height" id="height2" onclick="setheight('high');">High
+					<input type="radio" low="Low" value="1" name="height" id="height2" onclick="setheight('high');" value="High" />High
 				</li>
 			</ul>
 		</div>
@@ -451,13 +546,13 @@ Shopping cart $0.00 (0)
 			<div class="title">Collar Stay</div>
 			<ul class="collar_height">
 	            <li class="listay1">
-					<input type="radio" id="stay1" name="stay">No Stay
+					<input type="radio" id="stay1" name="stay" value="No Stay" onclick="set_value('step3_stayval','No Stay');" />No Stay
 				</li>
 				<li class="listay2">
-					<input type="radio" id="stay2" name="stay">Removable
+					<input type="radio" id="stay2" name="stay" value="Removable" onclick="set_value('step3_stayval','Removable');" />Removable
 				</li>
 				<li class="listay3">
-					<input type="radio" id="stay3" name="stay">Permanent
+					<input type="radio" id="stay3" name="stay" value="Permanent" onclick="set_value('step3_stayval','Permanent');" />Permanent
 				</li>
 			</ul>
 		</div>
@@ -466,20 +561,20 @@ Shopping cart $0.00 (0)
 		<div class="title">Collar Stiffness</div>
 		<ul class="collar_height">
 			<li class="listiffness1">
-				<input type="radio" id="stiffness1" name="stiffness">Soft
+				<input type="radio" id="stiffness1" name="stiffness" value="Soft" onclick="set_value('step3_stiffnessval','Soft');" />Soft
+			</li>
+			<li class="listiffness2">
+				<input type="radio" id="stiffness2" name="stiffness" value="Standard" onclick="set_value('step3_stiffnessval','Standard');"  />Standard
 			</li>
 			<li class="listiffness3">
-				<input type="radio" id="stiffness2" name="stiffness">Standard
-			</li>
-			<li class="listiffness3">
-				<input type="radio" id="stiffness3" name="stiffness">Hard
+				<input type="radio" id="stiffness3" name="stiffness" value="Hard" onclick="set_value('step3_stiffnessval','Hard');" />Hard
 			</li>
 			</ul>
-		</div><div id="buttonWidget">
+		</div><div id="buttonWidget" style="margin-top:0px;">
 		<ol>
 		<li style="background-color:white;"><a style="background-color:white;color:black;" href="#" id="reset" onclick="reset();return false;">Reset Sample</a></li>
 		<li><a href="#" id="details" onclick="return false;">Details</a></li>
-		<li><a href="#">Add To Cart</a></li>
+		<li><a href="measure1.php">Proceed To Order</a></li>
 	<ol>
 
 </ol></ol></div>

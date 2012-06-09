@@ -1,5 +1,5 @@
-<i style="color:#CCCCCC;">* For Illustration purpose only. Actual product might differ in color and construction.</i>
-
+<? if($note != 0): ?><i style="color:#CCCCCC;">* For Illustration purpose only. Actual product might differ in color and construction.</i>
+<? endif; ?><br /><br />
 <script>
 show_price();
 </script>
@@ -55,7 +55,7 @@ show_price();
   <br clear="all">
   <br clear="all">
   <br clear="all">
-  <div class="float_left" style="width:600px;color:#979797;"> Copyright © All Rights Reserved.TailorMe PTE LTD 2012 </div>
+  <div class="float_left" style="width:600px;color:#979797;"> Copyright © by Green Ecoland Pte Ltd 2012. All Rights Reserved </div>
   <br clear="all">
 </div>
 <!-- footer -->

@@ -203,9 +203,9 @@ float:right;
                   <div class="fabric">
                
                <div class="compartment">
-               <div style="text-align:center;width:160px;height:240px;" class="section" onClick="showbottom_cut('classic');"><img title="classic.png" class="Back Yokeimg1" src="design/bottom_cuts/classic.png"><div style="">classic</div></div>
-               <div style="text-align:center;width:160px;height:240px;" class="section" onClick="showbottom_cut('modern');"><img title="modern.png" class="Back Yokeimg2" src="design/bottom_cuts/modern.png"><div style="">modern</div></div>
-               <div style="text-align:center;width:160px;height:240px;" class="section" onClick="showbottom_cut('straight');"><img title="straight.png" class="Back Yokeimg3" src="design/bottom_cuts/straight.png"><div style="">straight</div></div></div>
+               <div style="text-align:center;width:160px;height:240px;" class="section" onClick="showbottom_cut('classic');"><img title="classic.png" class="Back Yokeimg1" src="design/bottom_cuts/classic.png"><div style="">Classic</div></div>
+               <div style="text-align:center;width:160px;height:240px;" class="section" onClick="showbottom_cut('modern');"><img title="modern.png" class="Back Yokeimg2" src="design/bottom_cuts/modern.png"><div style="">Modern</div></div>
+               <div style="text-align:center;width:160px;height:240px;" class="section" onClick="showbottom_cut('straight');"><img title="straight.png" class="Back Yokeimg3" src="design/bottom_cuts/straight.png"><div style="">Straight</div></div></div>
                
               </div>
               
@@ -214,7 +214,7 @@ float:right;
                   <ol>
                   <li style="background-color:white;"><a id="reset" href="#" style="background-color:white;color:black;" onclick="reset();return false;">Reset Sample</a></li>
                   <li><a href="#" id="details" onclick="return false;">Details</a></li>
-                  <li><a href="#">Add To Cart</a></li>
+                  <li><a href="measure1.php">Proceed To Order</a></li>
                   <ol>
                   <div style="clear:both;"></div>
                   </div>

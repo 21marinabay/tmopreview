@@ -44,6 +44,28 @@ $ShirtLyr12[4] = $num;
 $ShirtLyr13[4] = $num; 
 $ShirtLyr16[4] = $num;
 
+$ButtonLyr03[4]		= $num;
+$PlacketLyr04[4]	= $num;
+$PlacketContrastLyr06[4]	= $num;
+$TieFixLyr05[4] 	= $num;
+$CollarLyr07[4] 	= $num;
+$CollarLyr09[4] 	= $num;
+$CuffLyr05[4] 		= $num;
+$ShirtLyr07[4] 		= $num;
+$ShirtLyr11[4] 		= $num;
+$ShirtLyr15[4] 		= $num;
+$ButtonLyr02[4]		= $num;
+$PlacketLyr03[4]	= $num;
+$PlacketContrastLyr05[4] 	= $num;
+$TieFixLyr04[4] 	= $num;
+$CollarLyr06[4] 	= $num;
+$CollarLyr08[4] 	= $num;
+$CuffLyr04[4] 		= $num;
+$ShirtLyr06[4] 		= $num;
+$ShirtLyr10[4] 		= $num;
+$ShirtLyr14[4] 		= $num;
+
+
 
 
 include('../refresh_filename.php');

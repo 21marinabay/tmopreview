@@ -1,7 +1,8 @@
 <?
 include('system/config.php');?>
+
 <? $count = 1; ?>
-                <? $all = 'select * from fabricsnew where 1';
+                <? $all = 'select * from fabricsnew LIMIT 1 , 12';
 				$query1 = mysql_query($all);
 while($row=mysql_fetch_array($query1))
 {	

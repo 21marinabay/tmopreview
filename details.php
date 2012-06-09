@@ -1,43 +1,47 @@
-<?
+<?php
 session_start();
 
+
 $_SESSION['details']['gender'] = 'Male';
-$_SESSION['details']['Fit'] = 'Regular';
-$_SESSION['details']['Sleeve'] = 'Long';
-$_SESSION['details']['Base Fabric'] = 'Prive';
-$_SESSION['details']['Collar'] = 'Business';
-$_SESSION['details']['Collar Stay'] = 'Removable';
-$_SESSION['details']['Collar Stiffness'] = 'Standard';
-$_SESSION['details']['Collar Height'] = 'Normal';
-$_SESSION['details']['Collar-Outer Fabric'] = 'Prive';
-$_SESSION['details']['Collar-Inner Fabric'] = 'Prive';
-$_SESSION['details']['Cuff'] = 'Single button';
-$_SESSION['details']['Cuff Stiffness'] = 'Standard';
-$_SESSION['details']['Cuff Placket Buttons'] = 'Yes';
-$_SESSION['details']['Cuff Style'] = 'Straight';
-$_SESSION['details']['Cuff-Outer Fabric'] = 'Prive';
-$_SESSION['details']['Cuff-Inner Fabric'] = 'Prive';
-$_SESSION['details']['Button'] = 'White';
-$_SESSION['details']['Fastening'] = 'Normal placket';
-$_SESSION['details']['Placket-Outer Fabric'] = 'Prive';
-$_SESSION['details']['Placket-Inner Fabirc'] = 'Prive';
-$_SESSION['details']['Placket-Flip Side Fabric'] = 'Prive';
-$_SESSION['details']['Pocket'] = 'Left pocket';
-$_SESSION['details']['Bottom Cut'] = 'Classic';
-$_SESSION['details']['Back Details'] = 'No back details';
-$_SESSION['details']['Back Yoke'] = 'Classic';
-$_SESSION['details']['Button Thread'] = 'White';
-$_SESSION['details']['Tie Fix'] = 'No';
-$_SESSION['details']['Handkerchief'] = 'No';
+$_SESSION['details']['Fit'] 		= ($_SESSION['step1a'])?$_SESSION['step1a']:'Regular';
+$_SESSION['details']['Sleeve'] 		= ($_SESSION['step1b'])?$_SESSION['step1b']:'Long';
+$_SESSION['details']['Base Fabric'] = ($_SESSION['step2_value'])?$_SESSION['step2_value']:'Prive';
+$_SESSION['details']['Collar'] 		= ($_SESSION['step3'])?$_SESSION['step3']:'Business';
+$_SESSION['details']['Collar Stay'] = ($_SESSION["step3_stayval"])?$_SESSION["step3_stayval"]:'Removable';
+$_SESSION['details']['Collar Stiffness'] 	= ($_SESSION["step3_stiffnessval"])?$_SESSION["step3_stiffnessval"]:'Standard';
+$_SESSION['details']['Collar Height'] 		= ($_SESSION["step3_height"])?$_SESSION["step3_height"]:'Normal';
+$_SESSION['details']['Collar-Outer Fabric'] = ($_SESSION['step11_value'])?$_SESSION['step11_value']:'Prive';
+$_SESSION['details']['Collar-Inner Fabric'] = ($_SESSION['step12_value'])?$_SESSION['step12_value']:'Prive';
+$_SESSION['details']['Cuff'] 				= ($_SESSION["step4"])?$_SESSION["step4"]:'Single button';
+$_SESSION['details']['Cuff Stiffness'] 		= ($_SESSION["step4_stiffness"])?$_SESSION["step4_stiffness"]:'Standard';
+$_SESSION['details']['Cuff Placket Buttons']= 'Yes';
+$_SESSION['details']['Cuff Style'] 			= ($_SESSION["step4_style"])?$_SESSION["step4_style"]:'Straight';
+$_SESSION['details']['Cuff-Outer Fabric'] 	= ($_SESSION['step13_value'])?$_SESSION['step13_value']:'Prive';
+$_SESSION['details']['Cuff-Inner Fabric'] 	= ($_SESSION['step14_value'])?$_SESSION['step14_value']:'Prive';
+$_SESSION['details']['Button'] 				= ($_SESSION['step5_html'])?$_SESSION['step5_html']:'White';
+$_SESSION['details']['Fastening'] 			= ($_SESSION['step6'])?$_SESSION['step6']:'Normal placket';
+$_SESSION['details']['Placket-Outer Fabric'] 	= ($_SESSION['step15_html'])?$_SESSION['step15_html']:'Prive';
+$_SESSION['details']['Placket-Inner Fabirc'] 	= ($_SESSION['step16_html'])?$_SESSION['step16_html']:'Prive';
+$_SESSION['details']['Placket-Flip Side Fabric']= ($_SESSION['step17_html'])?$_SESSION['step17_html']:'Prive';
+$_SESSION['details']['Pocket'] 				= ($_SESSION['step7'])?$_SESSION['step7']:'Left pocket';
+$_SESSION['details']['Bottom Cut'] 			= ($_SESSION['step8'])?$_SESSION['step8']:'Classic';
+$_SESSION['details']['Back Details'] 		= ($_SESSION['step9'])?$_SESSION['step9']:'No back details';
+$_SESSION['details']['Back Yoke'] 			= ($_SESSION['step10'])?$_SESSION['step10']:'Classic';
+$_SESSION['details']['Button Thread'] 		= ($_SESSION['step18_html'])?$_SESSION['step18_html']:'White';
+$_SESSION['details']['Tie Fix'] 			= ($_SESSION['tie_fix_html'])?$_SESSION['tie_fix_html']:'No';
+$_SESSION['details']['Handkerchief'] 		= ($_SESSION['handkerchief_html'])?$_SESSION['handkerchief_html']:'No';
+
+	
 ?>
 <style>
 table.de tr td {
-	padding:2px;	
+	padding:2px;
+	text-transform:capitalize;	
 }
 </style>
-<div align="center"><br />
-
-<table cellpadding="2" cellspacing="2" class="de" style="width:280px;text-align:center">
+<div align="center">
+<br />
+<table cellpadding="2" cellspacing="2" class="de" style="width:360px;text-align:center">
   <tr>
     <td><strong>Gender</strong></td><td>
       <?=$_SESSION['details']['gender']?></td>

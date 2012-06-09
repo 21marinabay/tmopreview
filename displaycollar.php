@@ -5,7 +5,7 @@
 // End of Declare global variables
 // Subroutine - InitialiseVariables()	
 error_reporting(0);
-ini_set('display_errors',1);
+ini_set('display_errors',0);
 
 
 $BackDetails[1]	= "BackDetails-Closeup-Lyr01-";

@@ -54,31 +54,106 @@ if ($handle = opendir('design/fabrics')) {
 	$(document).ready(function(){
 		showpreview();	
 		
+		function generateHTML(){
+			
+			if($("#size1").attr("checked") == "checked")
+				size = "cm";
+			if($("#size2").attr("checked") == "checked")
+				size = "inches";
+			
+			html = '<style>table.de tr td { padding:2px; }</style> <div align="center"><br />';
+			html += '<table cellpadding="2" cellspacing="2" class="de" style="width:280px;text-align:center">';
+			html += '<tr><td><strong>Measurement</strong></td><td>Measurement from best fitting shirt</td></tr>';
+			html += '<tr><td><strong>SIZE</strong></td><td>'+size+'</td></tr>';
+			html += '<tr><td><strong>Collar </strong></td><td>'+$("#f1").val()+'</td></tr>';
+			html += '<tr><td><strong>Chest </strong></td><td>'+$("#f2").val()+'</td></tr>';
+			html += '<tr><td><strong>Waist </strong></td><td>'+$("#f3").val()+'</td></tr>';
+			html += '<tr><td><strong>Length to Waist </strong></td><td>'+$("#f4").val()+'</td></tr>';
+			html += '<tr><td><strong>Bottom width </strong></td><td>'+$("#f5").val()+'</td></tr>';
+			html += '<tr><td><strong>Shirt length </strong></td><td>'+$("#f6").val()+'</td></tr>';
+			html += '<tr><td><strong>Shoulder width </strong></td><td>'+$("#f7").val()+'</td></tr>';
+			html += '<tr><td><strong>Long sleeve upper length </strong></td><td>'+$("#f8").val()+'</td></tr>';
+			html += '<tr><td><strong>Long sleeve lower length </strong></td><td>'+$("#f9").val()+'</td></tr>';
+			html += '<tr><td><strong>Short sleeve upper length </strong></td><td>'+$("#f10").val()+'</td></tr>';
+			html += '<tr><td><strong>Short sleeve lower length </strong></td><td>'+$("#f11").val()+'</td></tr>';
+			html += '<tr><td><strong>Cuff </strong></td><td>'+$("#f12").val()+'</td></tr>';
+			html += '<tr><td><strong>Sleeve width </strong></td><td>'+$("#f13").val()+'</td></tr>';
+			html += '<tr><td><strong>Short sleeve opening </strong></td><td>'+$("#f14").val()+'</td></tr>';
+			
+			str = 'size_measure2='+size+'&f1='+$("#f1").val()+'&f2='+$("#f2").val()+'&f3='+$("#f3").val()+'&f4='+$("#f4").val()+'&f5='+$("#f5").val()+'&';
+			str += 'f6='+$("#f6").val()+'&f7='+$("#f7").val()+'&f8='+$("#f8").val()+'&f9='+$("#f9").val()+'&f10='+$("#f10").val()+'&f11='+$("#f11").val()+'&';
+			str += 'f12='+$("#f12").val()+'&f13='+$("#f13").val()+'&f14='+$("#f14").val();
+			
+			
+			$.ajax({
+				url: 'system/modules/session.php?key=measure2',
+				data: str,
+				cache: false,
+				async: false,
+				success: function(html){
+				
+				}
+			});
+						
+			return html;
+
+		}
+		
+		//DETAILS BUTTON CLICK
 		$("#details").click(function(){
 
 			$('.modalOverlay').remove();
 			$("body").append('<div class="modalOverlay">');
 			
-				$.ajax({
-		  url: 'details.php',
-		  cache: false,
-		  async: false,
-		  success: function(html){
-			$('#details_c').html(html);
-		}
-		});
-
+			htmlStr = generateHTML();	
+			htmlStr += '</table></div>';
+			
+			$('#details_c').html(htmlStr);
 
 			$("#detailsZoom").dialog({
 				close: function(event, ui) { $('.modalOverlay').remove(); },
-				height:670,
+				height:470,
 				width:470,
 				title:'DETAILS SUMMARY',
-				closeText:' ',
-				
+				closeText:' ',				
+			});	
+		});		
+		
+		//ORDER CLICK
+		$("#final_order").click(function(){
+
+			$('.modalOverlay').remove();
+			$("body").append('<div class="modalOverlay">');
+			
+			htmlStr = generateHTML();	
+
+			htmlStr += '<tr><td>Total Cost : $<?php echo $_SESSION['costTotal']?></td>';
+			htmlStr += '<td><div id="buttonWidget"><ol><li><a href="javascript:void(0);" id="shipping">CONFIRM</a></li></ol></div></td></tr>';
+			htmlStr += '</table></div>';
+			
+			
+			//TODO
+			$.ajax({
+				url: 'details_measure2.php',
+				cache: false,
+				async: false,
+				success: function(returnhtml){
+					allData = '<table><tr><td>'+returnhtml+'</td><td>'+htmlStr+'</td></table>';
+					$('#details_c').html(allData);
+				}
 			});
-	
-		});
+		
+			
+
+			$("#detailsZoom").dialog({
+				close: function(event, ui) { $('.modalOverlay').remove(); },
+				height:910,
+				width:720,
+				title:'DETAILS SUMMARY',
+				closeText:' ',				
+			});	
+			
+		});	
 		
 		
 	});	
@@ -197,7 +272,15 @@ if ($handle = opendir('design/fabrics')) {
 </style>
       <script>
 	$(document).ready(function(){
-				$("#measurements").attr('src','images/ruler-white.png');
+
+		$("#measurements").attr('src','images/ruler-white.png');
+		
+		$(".gray2").focus(function(){
+			id = this.id;
+			var val = id.match(/\d+/g);
+			show_div(val);
+		});
+		
 	});
 </script>
       <? include('system/top_nav.php'); ?>
@@ -426,90 +509,90 @@ function show_div(id)
               <div class="title"> </div>
               <br />
               <strong>MEASURE FROM YOUR BEST FITING SHIRT</strong><br />
-              <input type="radio" name="size" />
+              <input type="radio" name="size_measure2" id="size1" <?php if($_SESSION['size_measure2'] == 'cm') echo 'checked';?> checked="checked" />
               cm
               &nbsp;              &nbsp;              &nbsp;
-              <input type="radio" name="size" />
+              <input type="radio" name="size_measure2" id="size2" <?php if($_SESSION['size_measure2'] == 'inches') echo 'checked';?> />
               inches <br />
               <br />
               <br />
-              <table style="width:300px;" cellspacing="4" cellspacing="5">
               
+		<table style="width:300px;" cellspacing="4" cellspacing="5">
             <tr>
                   <td>Collar</td>
-                  <td><input type="text" size="15" class="gray2" id="f1" onclick="reset_input();;$('#f1').css('background-color','#e3e3e3');show_div(1)" /></td>
+                  <td><input type="text" size="15"  value="<?php echo $_SESSION['f1'];?>"  class="gray2" id="f1" onclick="reset_input();;$('#f1').css('background-color','#e3e3e3');show_div(1)" /></td>
                 </tr>
           
             <tr>
               <td>Chest</td>
-              <td><input type="text" size="15" class="gray2" id="f2" onclick="reset_input();;$('#f2').css('background-color','#e3e3e3');show_div(2)" /></td>
+              <td><input type="text" size="15"  value="<?php echo $_SESSION['f2'];?>"  class="gray2" id="f2" onclick="reset_input();;$('#f2').css('background-color','#e3e3e3');show_div(2)" /></td>
             </tr>
           
             <tr>
               <td>Waist</td>
-              <td><input type="text" size="15" class="gray2" id="f3" onclick="reset_input();;$('#f3').css('background-color','#e3e3e3');show_div(3)" /></td>
+              <td><input type="text" size="15"  value="<?php echo $_SESSION['f3'];?>"  class="gray2" id="f3" onclick="reset_input();;$('#f3').css('background-color','#e3e3e3');show_div(3)" /></td>
             </tr>
           
             <tr>
               <td>Length to Waist</td>
-              <td><input type="text" size="15" class="gray2" id="f4" onclick="reset_input();;$('#f4').css('background-color','#e3e3e3');show_div(4)" /></td>
+              <td><input type="text" size="15"  value="<?php echo $_SESSION['f4'];?>"  class="gray2" id="f4" onclick="reset_input();;$('#f4').css('background-color','#e3e3e3');show_div(4)" /></td>
             </tr>
           
             <tr>
               <td>Bottom width</td>
-              <td><input type="text" size="15" class="gray2" id="f5" onclick="reset_input();;$('#f5').css('background-color','#e3e3e3');show_div(5)" /></td>
+              <td><input type="text" size="15"  value="<?php echo $_SESSION['f5'];?>"  class="gray2" id="f5" onclick="reset_input();;$('#f5').css('background-color','#e3e3e3');show_div(5)" /></td>
             </tr>
           
             <tr>
               <td>Shirt length</td>
-              <td><input type="text" size="15" class="gray2" id="f6" onclick="reset_input();;$('#f6').css('background-color','#e3e3e3');show_div(6)" /></td>
+              <td><input type="text" size="15"  value="<?php echo $_SESSION['f6'];?>"  class="gray2" id="f6" onclick="reset_input();;$('#f6').css('background-color','#e3e3e3');show_div(6)" /></td>
             </tr>
           
             <tr>
               <td>Shoulder width</td>
-              <td><input type="text" size="15" class="gray2" id="f7" onclick="reset_input();;$('#f7').css('background-color','#e3e3e3');show_div(7)" /></td>
+              <td><input type="text" size="15"  value="<?php echo $_SESSION['f7'];?>"  class="gray2" id="f7" onclick="reset_input();;$('#f7').css('background-color','#e3e3e3');show_div(7)" /></td>
             </tr>
           
             <tr>
               <td>Long sleeve upper length</td>
-              <td><input type="text" size="15" class="gray2" id="f8" onclick="reset_input();;$('#f8').css('background-color','#e3e3e3');show_div(8)" /></td>
+              <td><input type="text" size="15"  value="<?php echo $_SESSION['f8'];?>"  class="gray2" id="f8" onclick="reset_input();;$('#f8').css('background-color','#e3e3e3');show_div(8)" /></td>
             </tr>
           
             <tr>
               <td>Long sleeve lower length</td>
-              <td><input type="text" size="15" class="gray2" id="f9" onclick="reset_input();;$('#f9').css('background-color','#e3e3e3');show_div(9)" /></td>
+              <td><input type="text" size="15"  value="<?php echo $_SESSION['f9'];?>"  class="gray2" id="f9" onclick="reset_input();;$('#f9').css('background-color','#e3e3e3');show_div(9)" /></td>
             </tr>
           
             <tr>
               <td>Short sleeve upper length</td>
-              <td><input type="text" size="15" class="gray2" id="f10" onclick="reset_input();;$('#f10').css('background-color','#e3e3e3');show_div(10)" /></td>
+              <td><input type="text" size="15"  value="<?php echo $_SESSION['f10'];?>"  class="gray2" id="f10" onclick="reset_input();;$('#f10').css('background-color','#e3e3e3');show_div(10)" /></td>
             </tr>
           
             <tr>
               <td>Short sleeve lower length</td>
-              <td><input type="text" size="15" class="gray2" id="f11" onclick="reset_input();;$('#f11').css('background-color','#e3e3e3');show_div(11)" /></td>
+              <td><input type="text" size="15"  value="<?php echo $_SESSION['f11'];?>"  class="gray2" id="f11" onclick="reset_input();;$('#f11').css('background-color','#e3e3e3');show_div(11)" /></td>
             </tr>
           
             <tr>
               <td>Cuff</td>
-              <td><input type="text" size="15" class="gray2" id="f12" onclick="reset_input();;$('#f12').css('background-color','#e3e3e3');show_div(12)" /></td>
+              <td><input type="text" size="15"  value="<?php echo $_SESSION['f12'];?>"  class="gray2" id="f12" onclick="reset_input();;$('#f12').css('background-color','#e3e3e3');show_div(12)" /></td>
             </tr>
             <tr>
               <td>Sleeve width</td>
-              <td><input type="text" size="15" class="gray2" id="f12" onclick="reset_input();;$('#f12').css('background-color','#e3e3e3');show_div(13)" /></td>
+              <td><input type="text" size="15"  value="<?php echo $_SESSION['f13'];?>"  class="gray2" id="f13" onclick="reset_input();;$('#f13').css('background-color','#e3e3e3');show_div(13)" /></td>
             </tr>
           
             <tr>
               <td>Short sleeve opening</td>
-              <td><input type="text" size="15" class="gray2" id="f13" onclick="reset_input();;$('#f13').css('background-color','#e3e3e3');show_div(14)" /></td>
+              <td><input type="text" size="15"  value="<?php echo $_SESSION['f14'];?>"  class="gray2" id="f14" onclick="reset_input();;$('#f14').css('background-color','#e3e3e3');show_div(14)" /></td>
             </tr>
   </table>
     </div>
 <div id="buttonWidget">
 <ol>
-<li style="background-color:white;"><a id="reset" href="#" style="background-color:white;color:black;" onclick="reset();return false;">Reset Sample</a></li>
-<li><a href="#" id="details" onclick="return false;">Details</a></li>
-<li><a href="#">Add To Cart</a></li>
+    <li style="background-color:white;"><a id="reset" href="#" style="background-color:white;color:black;" onclick="reset();return false;">Reset Sample</a></li>
+    <li><a href="#" id="details" onclick="return false;">Save</a></li>
+    <li><a href="#" id="final_order">Order</a></li>
 <ol>
 <div style="clear:both;"></div>
 </div>

@@ -71,12 +71,29 @@ switch ($type) {
         break;
     case 'short with normal cuff':
 		$ShirtLyr05[3] = "NarrowCuffShortSleeve.";
+		
+		$cuff_outer = '0001';
+		$cuff_inner = '0001';
+		
+		
 		$ShirtLyr05[5] = "Show";
+		
 		$ShirtLyr12[5] = "Show";
 		$ShirtLyr13[5] = "Show";
 		$ShirtLyr14[5] = "Hide";
 		$ShirtLyr15[5] = "Hide";
 		$ShirtLyr16[5] = "Hide";
+		
+		$ShirtLyr12[2] = "";
+		$ShirtLyr12[2] = "Cuff-Short";
+		$ShirtLyr12[3] = "-Outer.";
+		$ShirtLyr12[4] = $cuff_outer;
+		
+		$ShirtLyr13[2] = "Cuff-Short";
+		$ShirtLyr13[3] = "-Inner.";
+		$ShirtLyr13[4] = $cuff_inner;
+		
+		
         break;
 }
 
@@ -420,6 +437,8 @@ $cuff = $_SESSION['step4'];
 if($cuff == '')
 {
 	$cuff = 'single button';
+	
+	
 }
 
 switch ($cuff) {
@@ -448,6 +467,7 @@ switch ($cuff) {
 		
         break;
     case 'single button':	
+    	if(!$type="short with normal cuff"){
 		$CuffLyr02[3] = "SingButton-Outer.";
 		$CuffLyr03[3] = "SingButton-Inner.";
 		$CuffLyr04[3] = "SingButton-Thread.";
@@ -457,7 +477,7 @@ switch ($cuff) {
 	    $ShirtLyr14[3] = "SingButton-Thread.";
 		$ShirtLyr15[3] = "SingButton-Button.";
 		$ShirtLyr16[2] = "Cuff-NormRight."; 
-
+    	}
 		
         break;
     case 'neapolitan':	
@@ -780,27 +800,84 @@ if($collar_inner != '')
 
 $cuff_outer = $_SESSION['step13'];
 
-if($cuff_outer == '')
-	$cuff_outer = $_SESSION['step2'];
+if($cuff_outer != '')
+{
+	if(strtolower($_SESSION['step1b']) == 'short with normal cuff')
+	{
+	$ShirtLyr12[2] = "Cuff-Short";
+	$ShirtLyr13[2] = "Cuff-Short";
+	}else
+	{
+		$ShirtLyr12[2] = "Cuff-StrSingButton";
+		$ShirtLyr13[2] = "Cuff-StrSingButton";
+		
+		
+	}
+	
+	$ShirtLyr12[3] = "-Outer.";
+	$ShirtLyr12[4] = $cuff_outer;
+	$ShirtLyr16[4] = $cuff_outer;
+	
+	
+	
+	$ShirtLyr13[3] = "-Inner.";
+	$ShirtLyr13[4] = $cuff_inner;
+	
+	
+	
+	
+}
 
-if(strtolower($_SESSION['step1b']) == 'short with normal cuff' && $cuff_outer != '')
+/*if($cuff_outer == '')
+	$cuff_outer = '0001';
+
+if($cuff_inner == '')
+$cuff_inner = '0001';
+*/
+
+/*if(strtolower($_SESSION['step1b']) == 'short with normal cuff')
 {
 	$ShirtLyr12[2] = "Cuff-Short";
 	$ShirtLyr12[3] = "-Outer.";
 	$ShirtLyr12[4] = $cuff_outer;
+	
+	
 }
 else if($cuff_outer != '')
 {
+	
+     
 	$ShirtLyr12[4] = $cuff_outer;
 }
-
+*/
 
 $cuff_inner = $_SESSION['step14'];
 
-if($cuff_inner == '')
-	$cuff_inner = $_SESSION['step2'];
+if($cuff_inner != '')
+{
+	
+	if(strtolower($_SESSION['step1b']) == 'short with normal cuff')
+	{
+	$ShirtLyr12[2] = "Cuff-Short";
+	$ShirtLyr13[2] = "Cuff-Short";
+	
+	//$ShirtLyr12[4] = $cuff_outer;
+	}else
+	{
+		$ShirtLyr12[2] = "Cuff-StrSingButton";
+		$ShirtLyr13[2] = "Cuff-StrSingButton";
+		
+		
+	}
+	
+	
+	$ShirtLyr12[3] = "-Outer.";
+	$ShirtLyr13[3] = "-Inner.";
+	$ShirtLyr13[4] = $cuff_inner;
+	
+}
 
-if(strtolower($_SESSION['step1b']) == 'short with normal cuff' && $cuff_inner != '')
+/*if(strtolower($_SESSION['step1b']) == 'short with normal cuff')
 {
 	$ShirtLyr13[2] = "Cuff-Short";
 	$ShirtLyr13[3] = "-Inner.";
@@ -808,9 +885,16 @@ if(strtolower($_SESSION['step1b']) == 'short with normal cuff' && $cuff_inner !=
 }
 else if($cuff_inner != '')
 {
-	$CuffLyr03[4] = $cuff_inner;
+	
 	$ShirtLyr13[4] = $cuff_inner;
 }
+*/
+
+
+
+
+
+
 
 
 
@@ -1145,7 +1229,14 @@ if($ShirtLyr16[5]=="Show")
 
 $output = json_encode($d);
 
-print $output;
+
+//print $ShirtLyr13[5]."".$output;
+//print "layer11".$lay11 ;
+//print "LAyer12".$lay12 ; 
+//print "Layer13".$lay13 ;
+//print "<br>";
+
+print $output ; 
 
 if($PlacketLyr04[5] == 'Hide')
 {

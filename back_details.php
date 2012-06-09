@@ -267,16 +267,26 @@ float:right;
                   <div class="fabric">
                
               <div class="compartment">
-              <div style="text-align:center;width:160px;height:200px;" class="section" onClick="showback_details('back darts');"><img title="back-darts.png" class="img1" src="design/back/back-darts.png" ><div style="">back darts</div></div>
-              <div style="text-align:center;width:160px;height:200px;" class="section" onClick="showback_details('centre folds');"><img title="center-folds.png" class="img2" src="design/back/center-folds.png" style="border: medium none;"><div style="">center folds</div></div>
-              <div style="text-align:center;width:160px;height:200px;" class="section" onClick="showback_details('no back folds');"><img title="no-back-folds.png" class="img3" src="design/back/no-back-folds.png" style="border: medium none;"><div style="">no back folds</div></div>
-              <div style="text-align:center;width:160px;height:200px;" class="section" onClick="showback_details('side folds');"><img title="side-folds.png" class="img4" src="design/back/side-folds.png" style="border: medium none;"><div style="">side folds</div></div></div>
+              
+              	<div>
+                  <div class="title">BACK FOLD</div>
+                  <div style="text-align:center;width:110px;height:200px;" class="section" onClick="showback_details('no back folds');"><img title="no-back-folds.png" class="img3" src="design/back/no-back-folds.png" style="border: medium none;"><div style="">No Back Folds</div></div>                
+                  <div style="text-align:center;width:110px;height:200px;" class="section" onClick="showback_details('centre folds');"><img title="center-folds.png" class="img2" src="design/back/center-folds.png" style="border: medium none;"><div style="">Center Folds</div></div>
+                  <div style="text-align:center;width:110px;height:200px;" class="section" onClick="showback_details('side folds');"><img title="side-folds.png" class="img4" src="design/back/side-folds.png" style="border: medium none;"><div style="">Side Folds</div></div>
+				</div>
+              	<div>
+                  <div class="title">BACK DARTS</div>                    
+	              <div style="text-align:center;width:110px;height:200px;" class="section" onClick="showback_details('no back darts');"><img title="no back darts.jpg" class="img1" src="design/back/no-back-darts.jpg" ><div style=""> No Back Darts</div></div>
+	              <div style="text-align:center;width:110px;height:200px;" class="section" onClick="showback_details('back darts');"><img title="back-darts.png" class="img1" src="design/back/back-darts.png" ><div style="">Back Darts</div></div>
+				</div>
+                
+              </div>
              
               </div><div id="buttonWidget">
                   <ol>
                   <li style="background-color:white;"><a id="reset" href="#" style="background-color:white;color:black;" onclick="reset();return false;">Reset Sample</a></li>
                   <li><a href="#" id="details" onclick="return false;">Details</a></li>
-                  <li><a href="#">Add To Cart</a></li>
+                  <li><a href="measure1.php">Proceed To Order</a></li>
                   <ol>
                   <div style="clear:both;"></div>
                   </div>

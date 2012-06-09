@@ -7,12 +7,12 @@ $layer = 5;
 $script = 'DisplayTieFix.php';
 $folder = 'Tie Fix';
 
-$sql = 'select * from fabrics order by item_order asc';
+$sql = 'select * from fabricsnew order where 1';
 $d = $db->getAll($sql);
 
 foreach($d as $f)
 {
-	$filename[$f['filename']] = $f['label']; 
+	$filename[$f['filename']] = $f['Label']; 
 }
 
 
@@ -53,6 +53,33 @@ if ($handle = opendir('design/fabrics')) {
 
 	$(document).ready(function(){
 		showpreview();	
+		
+		<?php 
+		if($_SESSION['tie_fix_html'] == 'Yes $8' ) {
+			?>
+			$("#tie_fix1").attr('checked','checked');
+			<?php
+		}
+		if($_SESSION['handkerchief_html'] == 'Yes $8') {
+		?>
+			$("#tie_fix2").attr('checked','checked');
+			<?php
+		}
+		?>
+		
+		$(".tie_fix").click(function(){
+		
+			if($("#tie_fix1").attr('checked') == 'checked')
+					set_value('tie_fix_html','Yes $8');
+			else
+					set_value('tie_fix_html','NO');
+
+			if($("#tie_fix2").attr('checked') == 'checked')
+					set_value('handkerchief_html','Yes $8');
+			else
+					set_value('handkerchief_html','NO');
+			
+		});
 		
 		$("#details").click(function(){
 
@@ -251,18 +278,24 @@ float:right;
                 <img class=""style="height:210px;position:absolute;" src="images/frame.png" /> </div>
                   <div class="fabric">
                 <div class="compartment"> <br>
-                      <table style="width:200px;">
+                      <table style="width:350px;">
                     <tr>
-                          <td><input type="checkbox" name="tie_fix" value="1" <?=($_SESSION['PlacketLyr04_hidden'] == 1) ? 'disabled':''?>></td>
+                          <td><input type="checkbox" class="tie_fix" id="tie_fix1" name="tie_fix" value="1" <?=($_SESSION['PlacketLyr04_hidden'] == 1) ? 'disabled':''?>></td>
                           
-                          <td valign="middle" style="padding-top:2px; <?=($_SESSION['PlacketLyr04_hidden'] == 1) ? 'color:#CCCCCC;':''?>">Add Tie Fix $8.00</td>
+                          <td valign="middle" style="padding-top:2px; <?=($_SESSION['PlacketLyr04_hidden'] == 1) ? 'color:#CCCCCC;':''?>">Add Tie Fix $8.00<br />
+Keep your tie in a place with a tie fix in a fabric that 
+matches your shirt
+
+</td>
                         </tr>
                      <tr>
                           <td colspan="2">&nbsp;
                         </tr>    
                     <tr>
-                          <td><input type="checkbox" name="tie_fix" value="2"></td>
-                          <td valign="middle" style="padding-top:2px;">Add Handkerchief $8.00</td>
+                          <td><input type="checkbox" class="tie_fix" id="tie_fix2" name="tie_fix" value="2"></td>
+                          <td valign="middle" style="padding-top:2px;">Add Handkerchief $8.00<br />
+Get a handkerchief that matches your shirt.
+The Size of handkerchief is 30*30cm (12*12 inches).</td>
                         </tr>
                   </table>
                     </div>
@@ -271,7 +304,7 @@ float:right;
                   <ol>
                   <li style="background-color:white;"><a id="reset" href="#" style="background-color:white;color:black;" onclick="reset();return false;">Reset Sample</a></li>
                   <li><a href="#" id="details" onclick="return false;">Details</a></li>
-                  <li><a href="#">Add To Cart</a></li>
+                  <li><a href="measure1.php">Proceed To Order</a></li>
                   <ol>
                   <div style="clear:both;"></div>
                   </div>

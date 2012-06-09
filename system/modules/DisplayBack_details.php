@@ -10,6 +10,11 @@ if($back_details == '')
 	$back_details = 'no back folds';
 
 switch ($back_details) {
+	case 'no back darts':
+		$BackDetails[2] = "";
+		$BackYoke[2] = "ClassicYoke.";
+		$show = 1;
+		break;
     case 'no back folds':			
 		$BackDetails[2] = "";
 		$BackYoke[2] = "ClassicYoke.";

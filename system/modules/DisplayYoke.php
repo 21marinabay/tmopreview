@@ -7,12 +7,15 @@ include('../current_setting.php');
 $yoke = $_SESSION['step10'];
 
 switch ($yoke) {
-    case 'classic':			
+    case 'classic $0':			
 		$BackYoke[2] = "ClassicYoke.";
         break;
-    case 'cowboy':	
+    case 'cowboy $0':	
 		$BackYoke[2] = "CowboyYoke.";
         break;
+	case 'cowboy split $5':
+		$BackYoke[2] = "CowboySplitYoke.";
+	    break;
 }
 
 

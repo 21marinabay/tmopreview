@@ -38,6 +38,13 @@ $CuffLyr02[0]	= $CuffLyr02[1].$CuffLyr02[2].$CuffLyr02[3].$CuffLyr02[4].".png";
 $CuffLyr03[0]	= $CuffLyr03[1].$CuffLyr03[2].$CuffLyr03[3].$CuffLyr03[4].".png";
 $CuffLyr04[0]	= $CuffLyr04[1].$CuffLyr04[2].$CuffLyr04[3].$CuffLyr04[4].".png";
 $CuffLyr05[0]	= $CuffLyr05[1].$CuffLyr05[2].$CuffLyr05[3].$CuffLyr05[4].".png";
+
+$CuffShortLyr01[0] = $CuffShortLyr01[1].$CuffShortLyr01[2].$CuffShortLyr01[3].$CuffShortLyr01[4].".png";
+$CuffShortLyr02[0] = $CuffShortLyr02[1].$CuffShortLyr02[2].$CuffShortLyr02[3].$CuffShortLyr02[4].".png";
+$CuffShortLyr03[0] = $CuffShortLyr03[1].$CuffShortLyr03[2].$CuffShortLyr03[3].$CuffShortLyr03[4].".png";
+$CuffShortLyr04[0] = $CuffShortLyr04[1].$CuffShortLyr04[2].$CuffShortLyr04[3].$CuffShortLyr04[4].".png";
+$CuffShortLyr05[0] = $CuffShortLyr05[1].$CuffShortLyr05[2].$CuffShortLyr05[3].$CuffShortLyr05[4].".png";
+
 $ShirtLyr01[0]	= $ShirtLyr01[1].$ShirtLyr01[2].$ShirtLyr01[3].$ShirtLyr01[4].".png";
 $ShirtLyr02[0]	= $ShirtLyr02[1].$ShirtLyr02[2].$ShirtLyr02[3].$ShirtLyr02[4].".png";
 $ShirtLyr03[0]	= $ShirtLyr03[1].$ShirtLyr03[2].$ShirtLyr03[3].$ShirtLyr03[4].".png";

@@ -14,7 +14,7 @@ foreach($res as $f)
 {
 	$label[$f['filename']] = $f; 	
 }
-
+//print "<pre>";print_r($label);
 
 if ($handle = opendir('design/thread')) {
   
@@ -53,6 +53,14 @@ if ($handle = opendir('design/thread')) {
 
 	$(document).ready(function(){
 		showthread();	
+		
+		$(".img1").click(function(){
+		
+			var fabhtml = $(this).next().html();
+			set_value('step18_html',fabhtml);
+			
+		});
+		
 		
 		$("#details").click(function(){
 
@@ -133,7 +141,7 @@ if ($handle = opendir('design/thread')) {
 	function updateRender_preview(icon_num)
 	{
 			$('#loading').fadeIn('slow');
-;
+
 			$.getJSON('system/modules/<?=$script?>',{}
 			,function(data)
 			{
@@ -336,7 +344,9 @@ float:right;
                       <div class ="slide">
                 <? endif; ?>
                 <div class="imageBox"><img  style="" src="design/thread/<?=$file?>" class="img1"  title="" onClick="showthread('<?=$id?>');" />
-                          <div id="imageTitle2" style="margin-top:15px;"><?=$fn['label']?></div>
+                          <div id="imageTitle2" style="margin-top:15px;"><?=$fn['label']?><br />$<?=$fn['Cost']?>
+                          
+                          </div>
                           </div>
                           
                       <? $count ++; ?>
@@ -352,7 +362,7 @@ float:right;
                   <ol>
                   <li style="background-color:white;"><a id="reset" href="#" style="background-color:white;color:black;" onclick="reset();return false;">Reset Sample</a></li>
                   <li><a href="#" id="details" onclick="return false;">Details</a></li>
-                  <li><a href="#">Add To Cart</a></li>
+                  <li><a href="measure1.php">Proceed To Order</a></li>
                   <ol>
                   <div style="clear:both;"></div>
                   </div>

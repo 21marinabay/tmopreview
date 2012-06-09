@@ -309,17 +309,29 @@ float:right;
                    </div>
                   <div class="fabric">
                <br />
-               <div class="compartment"><div class="title">Back Yoke</div>
-               <div style="text-align:center;width:160px;height:160px;" class="section" onClick="showyoke('classic');" ><img title="classic.png" class="Back Yokeimg1" src="design/yoke/back/classic.png"><div style="">classic</div></div>
+               <div class="compartment">
                
-               <div style="text-align:center;width:160px;height:160px;" class="section" onClick="showyoke('cowboy');"><img title="cowboy.png" class="Back Yokeimg2" src="design/yoke/back/cowboy.png"><div style="">cowboy</div></div></div>
+               <div class="title">Back Yoke</div>
+               
+               <div style="text-align:center;width:110px;height:160px;" class="section" onClick="showyoke('classic $0');" >
+               	<img title="classic.png" class="Back Yokeimg1" src="design/yoke/back/classic.png"><div style="">Classic <br />$ 0.00 </div>
+               </div>
+               <div style="text-align:center;width:110px;height:160px;" class="section" onClick="showyoke('cowboy $0');">
+               	<img title="cowboy.png" class="Back Yokeimg2" src="design/yoke/back/cowboy.png"><div style="">Cowboy <br />$ 0.00 </div>
+               </div>
+               
+               <div style="text-align:center;width:110px;height:160px;" class="section" onClick="showyoke('cowboy split $5');">
+               	<img title="cowboy-split.png" class="Back Yokeimg3" src="design/yoke/back/cowboy-split.png"><div style="">Cowboy Split <br />$ 5.00 </div>
+               </div>               
+               </div>
+               
               </div>
               <br clear="all" />
                   <div id="buttonWidget">
                   <ol>
                   <li style="background-color:white;"><a id="reset" href="#" style="background-color:white;color:black;" onclick="reset();return false;">Reset Sample</a></li>
                   <li><a href="#" id="details" onclick="return false;">Details</a></li>
-                  <li><a href="#">Add To Cart</a></li>
+                  <li><a href="measure1.php">Proceed To Order</a></li>
                   <ol>
                   </div>
                   

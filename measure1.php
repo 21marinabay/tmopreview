@@ -54,31 +54,80 @@ if ($handle = opendir('design/fabrics')) {
 	$(document).ready(function(){
 		showpreview();	
 		
-		$("#details").click(function(){
-
+		$("#size_measure1").change(function(){
+		
+			set_value('size_measure1', this.value);
 			$('.modalOverlay').remove();
 			$("body").append('<div class="modalOverlay">');
 			
 				$.ajax({
-		  url: 'details.php',
-		  cache: false,
-		  async: false,
-		  success: function(html){
-			$('#details_c').html(html);
-		}
-		});
-
-
+				  url: 'details_measure1.php',
+				  cache: false,
+				  async: false,
+				  success: function(html){
+					$('#details_c').html(html);
+				}
+				});		
 			$("#detailsZoom").dialog({
 				close: function(event, ui) { $('.modalOverlay').remove(); },
-				height:670,
+				height:470,
 				width:470,
 				title:'DETAILS SUMMARY',
 				closeText:' ',
 				
-			});
-	
+			});	
+		
 		});
+
+
+		$("#details").click(function(){
+			$('.modalOverlay').remove();
+			$("body").append('<div class="modalOverlay">');
+			
+				$.ajax({
+				  url: 'details_measure1.php',
+				  cache: false,
+				  async: false,
+				  success: function(html){
+					$('#details_c').html(html);
+				}
+				});		
+			$("#detailsZoom").dialog({
+				close: function(event, ui) { $('.modalOverlay').remove(); },
+				height:470,
+				width:470,
+				title:'DETAILS SUMMARY',
+				closeText:' ',
+				
+			});	
+		});
+		
+		$("#final_order").click(function(){
+		
+			$('.modalOverlay').remove();
+			$("body").append('<div class="modalOverlay">');
+			
+				$.ajax({
+				  url: 'details_measure1.php',
+				  data: 'order=order',
+				  cache: false,
+				  async: false,
+				  success: function(html){
+						$('#details_c').html(html);
+					}
+				});		
+			$("#detailsZoom").dialog({
+				close: function(event, ui) { $('.modalOverlay').remove(); },
+				height:910,
+				width:790,
+				title:'DETAILS SUMMARY',
+				closeText:' ',
+				
+			});	
+		});
+		
+		
+		
 		
 		
 	});	
@@ -254,21 +303,21 @@ float:right;
                 Choose size ( XS - XXL )<br />
                 <br />
                 Standard size
-                <select name="size">
-                      <option>XS</option>
-                      <option>S</option>
-                      <option>M</option>
-                      <option>L</option>
-                      <option>XL</option>
-                      <option>XXL</option>
+                <select name="size_measure1" id="size_measure1">
+                      <option value="xs" <?php if($_SESSION['size_measure1'] == 'xs') echo 'selected';?>>XS</option>
+                      <option value="s" <?php if($_SESSION['size_measure1'] == 's') echo 'selected';?>>S</option>
+                      <option value="m" <?php if($_SESSION['size_measure1'] == 'm') echo 'selected';?>>M</option>
+                      <option value="l" <?php if($_SESSION['size_measure1'] == 'l') echo 'selected';?>>L</option>
+                      <option value="xl" <?php if($_SESSION['size_measure1'] == 'xl') echo 'selected';?>>XL</option>
+                      <option value="xxl" <?php if($_SESSION['size_measure1'] == 'xxl') echo 'selected';?>>XXL</option>
                     </select>
                 <BR />
                 <BR /> <img src="images/measure1_box.jpg" /> </div>
                   <div id="buttonWidget">
                   <ol>
                   <li style="background-color:white;"><a id="reset" href="#" style="background-color:white;color:black;" onclick="reset();return false;">Reset Sample</a></li>
-                  <li><a href="#" id="details" onclick="return false;">Details</a></li>
-                  <li><a href="#">Add To Cart</a></li>
+                  <li><a href="#" id="details" onclick="return false;">Save</a></li>
+                  <li><a href="#" id="final_order">Order</a></li>
                   <ol>
                   <div style="clear:both;"></div>
                   </div>

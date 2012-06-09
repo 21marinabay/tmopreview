@@ -53,6 +53,14 @@ switch ($fit) {
 switch ($type) {
     case 'long':	
 		$ShirtLyr05[3] = "LongSleeve.";
+
+		$ShirtLyr12[2] = "Cuff-Str";
+		$ShirtLyr12[3] = "SingButton-Outer.";
+		$ShirtLyr13[2] = "Cuff-Str";
+		$ShirtLyr13[3] = "SingButton-Inner.";
+		$ShirtLyr14[2] = "Cuff-Str";
+		$ShirtLyr14[3] = "SingButton -Thread.";
+
 		$ShirtLyr05[5] = "Show";
 		$ShirtLyr12[5] = "Show";
 		$ShirtLyr13[5] = "Show";
@@ -90,9 +98,16 @@ switch ($type) {
         break;
     case 'short with normal cuff':
 		$ShirtLyr05[3] = "NarrowCuffShortSleeve.";
+
+		$ShirtLyr12[2] = "Cuff-Short";
+		$ShirtLyr12[3] = "-Outer.";
+		$ShirtLyr13[2] = "Cuff-Short";
+		$ShirtLyr13[3] = "-Inner.";
+
 		$ShirtLyr05[5] = "Show";
-		$ShirtLyr12[5] = "Hide";
-		$ShirtLyr13[5] = "Hide";
+		$ShirtLyr12[5] = "Show";
+		$ShirtLyr13[5] = "Show";
+
 		$ShirtLyr14[5] = "Hide";
 		$ShirtLyr15[5] = "Hide";
 		$ShirtLyr16[5] = "Hide";
@@ -298,6 +313,30 @@ if($icon_num != '')
 	$ShirtLyr12[4] = $icon_num; 
 	$ShirtLyr13[4] = $icon_num; 
 	$ShirtLyr16[4] = $icon_num;
+	
+	//Added by PHP S( odesk )	
+	$ButtonLyr03[4]		= $icon_num;
+	$PlacketLyr04[4]	= $icon_num;
+	$PlacketContrastLyr06[4]	= $icon_num;
+	$TieFixLyr05[4] 	= $icon_num;
+	$CollarLyr07[4] 	= $icon_num;
+	$CollarLyr09[4] 	= $icon_num;
+	$CuffLyr05[4] 		= $icon_num;
+	$ShirtLyr07[4] 		= $icon_num;
+	$ShirtLyr11[4] 		= $icon_num;
+	$ShirtLyr15[4] 		= $icon_num;
+	$ButtonLyr02[4]		= $icon_num;
+	$PlacketLyr03[4]	= $icon_num;
+	$PlacketContrastLyr05[4] 	= $icon_num;
+	$TieFixLyr04[4] 	= $icon_num;
+	$CollarLyr06[4] 	= $icon_num;
+	$CollarLyr08[4] 	= $icon_num;
+	$CuffLyr04[4] 		= $icon_num;
+	$ShirtLyr06[4] 		= $icon_num;
+	$ShirtLyr10[4] 		= $icon_num;
+	$ShirtLyr14[4] 		= $icon_num;
+
+
 }
 
 $thread_num = strtolower($_GET['thread_num']);
@@ -392,6 +431,16 @@ if($cuff != '' && $cuff != 'undefined')
 
 switch ($cuff) {
     case 'narrow':	
+	
+		$CuffLyr02[2] = "Str";
+		$CuffLyr03[2] = "Str";
+		$CuffLyr04[2] = "Str";
+		$CuffLyr05[2] = "Str";
+		$ShirtLyr12[2] = "Cuff-Str";
+		$ShirtLyr13[2] = "Cuff-Str";
+		$ShirtLyr14[2] = "Cuff-Str";
+		$ShirtLyr15[2] = "Cuff-Str";
+
 		$CuffLyr02[3] = "Narrow-Outer.";
 		$CuffLyr03[3] = "Narrow-Inner.";
 		$CuffLyr04[3] = "Narrow-Thread.";
@@ -400,10 +449,22 @@ switch ($cuff) {
 		$ShirtLyr13[3] = "Narrow-Inner.";
 		$ShirtLyr14[3] = "Narrow-Thread.";
 		$ShirtLyr15[3] = "Narrow-Button.";
-		$ShirtLyr16[2] = "Cuff-ShortRight."; 
+		$ShirtLyr16[2] = "Cuff-ShortRight.";
+		
+ 
 		
         break;
     case 'double button':
+	
+		$CuffLyr02[2] = "Str";
+		$CuffLyr03[2] = "Str";
+		$CuffLyr04[2] = "Str";
+		$CuffLyr05[2] = "Str";
+		$ShirtLyr12[2] = "Cuff-Str";
+		$ShirtLyr13[2] = "Cuff-Str";
+		$ShirtLyr14[2] = "Cuff-Str";
+		$ShirtLyr15[2] = "Cuff-Str";
+
 		$CuffLyr02[3] = "DbButton-Outer.";
 		$CuffLyr03[3] = "DbButton-Inner.";
 		$CuffLyr04[3] = "DbButton-Thread.";
@@ -412,23 +473,33 @@ switch ($cuff) {
 		$ShirtLyr13[3] = "DbButton-Inner.";
 		$ShirtLyr14[3] = "DbButton-Thread.";
 		$ShirtLyr15[3] = "DbButton-Button.";
-		$ShirtLyr16[2] = "Cuff-NormRight."; 	
+		$ShirtLyr16[2] = "Cuff-NormRight.";
 		
         break;
     case 'single button':	
+
+		$CuffLyr02[2] = "Str";
+		$CuffLyr03[2] = "Str";
+		$CuffLyr04[2] = "Str";
+		$CuffLyr05[2] = "Str";
+		$ShirtLyr12[2] = "Cuff-Str";
+		$ShirtLyr13[2] = "Cuff-Str";
+		$ShirtLyr14[2] = "Cuff-Str";
+		$ShirtLyr15[2] = "Cuff-Str";
+
 		$CuffLyr02[3] = "SingButton-Outer.";
 		$CuffLyr03[3] = "SingButton-Inner.";
 		$CuffLyr04[3] = "SingButton-Thread.";
 		$CuffLyr05[3] = "SingButton-Button.";
 		$ShirtLyr12[3] = "SingButton-Outer.";
 		$ShirtLyr13[3] = "SingButton-Inner.";
-	$ShirtLyr14[3] = "SingButton-Thread.";
+		$ShirtLyr14[3] = "SingButton-Thread.";
 		$ShirtLyr15[3] = "SingButton-Button.";
 		$ShirtLyr16[2] = "Cuff-NormRight."; 
 
-		
         break;
     case 'neapolitan':	
+
 		$CuffLyr02[2] = "Neapolitan";
 		$CuffLyr03[2] = "Neapolitan";
 		$CuffLyr04[2] = "Neapolitan";
@@ -437,6 +508,7 @@ switch ($cuff) {
 		$ShirtLyr13[2] = "Cuff-Neapolitan";
 		$ShirtLyr14[2] = "Cuff-Neapolitan";
 		$ShirtLyr15[2] = "Cuff-Neapolitan";
+
 		$CuffLyr02[3] = "-Outer.";
 		$CuffLyr03[3] = "-Inner.";
 		$CuffLyr04[3] = "-Thread.";
@@ -446,9 +518,21 @@ switch ($cuff) {
 		$ShirtLyr14[3] = "-Thread.";
 		$ShirtLyr15[3] = "-Button.";
 		$ShirtLyr16[2] = "Cuff-NormRight."; 
+		
+
 			
         break;
     case 'french cuff':	
+	
+		$CuffLyr02[2] = "Str";
+		$CuffLyr03[2] = "Str";
+		$CuffLyr04[2] = "Str";
+		$CuffLyr05[2] = "Str";
+		$ShirtLyr12[2] = "Cuff-Str";
+		$ShirtLyr13[2] = "Cuff-Str";
+		$ShirtLyr14[2] = "Cuff-Str";
+		$ShirtLyr15[2] = "Cuff-Str";
+
 		$CuffLyr02[3] = "French-Outer.";
 		$CuffLyr03[3] = "French-Inner.";
 		$CuffLyr04[3] = "French-Thread.";
@@ -475,6 +559,16 @@ switch ($cuff) {
 		
         break;
     case 'triple button':	
+	
+		$CuffLyr02[2] = "Str";
+		$CuffLyr03[2] = "Str";
+		$CuffLyr04[2] = "Str";
+		$CuffLyr05[2] = "Str";
+		$ShirtLyr12[2] = "Cuff-Str";
+		$ShirtLyr13[2] = "Cuff-Str";
+		$ShirtLyr14[2] = "Cuff-Str";
+		$ShirtLyr15[2] = "Cuff-Str";
+
 		$CuffLyr02[3] = "TrpButton-Outer.";
 		$CuffLyr03[3] = "TrpButton-Inner.";
 		$CuffLyr04[3] = "TrpButton-Thread.";
@@ -488,7 +582,6 @@ switch ($cuff) {
         break;
     
 }
-
 
 $color = strtolower($_GET['color']);
 

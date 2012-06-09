@@ -170,9 +170,19 @@ if ($handle = opendir('design/fabrics')) {
 		
 		
 		$("#zoom").click(function(){
-	
+			
+			
 			$('.modalOverlay').remove();
 			$("body").append('<div class="modalOverlay">');
+			$.ajax({
+				url: 'fabric_details.php',
+				cache: false,
+				async: false,
+				success: function(html){
+				$('#fabricZoom').html(html);
+				
+				}
+			});
 			$("#fabricZoom").dialog({
 				close: function(event, ui) { $('.modalOverlay').remove(); },
 				height:470,
@@ -237,7 +247,7 @@ if ($handle = opendir('design/fabrics')) {
 					} else {
 
 						
-						//alert(data[index].path);
+						
 						$('#'+layer).attr('src',data[index].path);
 						
 					}
@@ -251,7 +261,7 @@ if ($handle = opendir('design/fabrics')) {
 	{
 			
 			set_value('step2',icon_num);
-			$('#popup_content').html('');
+			//$('#popup_content').html('');
 			
 			updateRender(icon_num);
 			updateRender_preview(icon_num);
@@ -263,7 +273,7 @@ if ($handle = opendir('design/fabrics')) {
 			if(icon_num == '')
 				icon_num = "0001";
 	
-			$('#popup_content').load('fabric_details.php?code='+icon_num);
+			//$('#popup_content').load('fabric_details.php?code='+icon_num);
 			
 	}
 
@@ -587,18 +597,7 @@ div.ui-dialog-content{
         <div class="title" style="margin-bottom:-15px;"> </div>
         </div>
                
-               <div id="buttonWidget">
-                 
-                  <ol>
-                  <li ><a href="#"   id="allfabrics" >ALL FABRICS</a></li>
-                  <li><a href="#"  id="plain" >PLAIN</a></li>
-                  <li><a href="#" id="striped"  >STRIPPED</a></li>
-				  <li ><a  href="#" id="allpatterns" >ALL PATTERNS</a></li>
-                  <li><a href="#"  id="checkered" >CHECKERED</a></li>
-                  <li><a href="#" id="print" onclick="loadPrint()">PRINT</a></li>
-                  </ol>
-              
-                  </div>
+       
                    <div class="compartment">
         <div class="title" style="margin-top:-15px;"> </div>
         </div>
@@ -643,12 +642,12 @@ while($row=mysql_fetch_array($query1))
                 <div class="compartment">
         <div class="title" style="margin-top:-15px;"> </div>
         </div>
-        <div style="float:left;padding-top:12px;"> <img src='images/pager-left.png' id='previ' style='cursor:pointer;' /> PAGE <span id="startNum">1</span>/<span id="pageNum">13</span> <img src='images/pager-right.png'id='nxt' ' style='cursor:pointer;' /> </div>
+        <div style="float:left;padding-top:12px;"> <img src='images/pager-left.png' id='previ' style='cursor:pointer;' /> PAGE <span id="startNum">1</span>/<span id="pageNum">13</span> <img src='images/pager-right.png'id='nxt' style='cursor:pointer;' /> </div>
                  <div id="buttonWidget">
                   <ol>
                   <li style="background-color:white;"><a id="reset" href="#" style="background-color:white;color:black;" onclick="reset();updateRender_preview('undefined');return false;">Reset Sample</a></li>
                   <li><a href="#" id="details" onclick="return false;">Details</a></li>
-                  <li><a href="#">Add To Cart</a></li>
+                  <li><a href="measure1.php">Proceed To Order</a></li>
                   <ol>
                   </div>
           <div class="compartment">
@@ -664,20 +663,21 @@ while($row=mysql_fetch_array($query1))
             </tbody>
       </table>
         </div>
-         <div id="fabricZoom" style="display:none;">
-                  <div class="fabricTitle">
-                <div style="float:right"><strong>$39.90</strong><br />
-                      <span style="font-size:11pt;">per shirt</span></div>
-                <span id="faTitle">Prive</span> </div>
-                  <div id="zoomImage" style="height:210px;"> 
-                  
-                  <img class="layz0" id="layz0" style="height:210px;position:absolute;" src="img/transparent.png" />
-                  </div>
-                  <div>
-              <div id="popup_content"></div>   
-    <!-- content --> 
-  </div>
-    </div>
+        
+        <div id="fabricZoom" style="display:none;">
+            <div class="fabricTitle">
+            <div style="float:right"><strong>$39.90</strong><br />
+        	    <span style="font-size:11pt;">per shirt</span></div>
+    	        <span id="faTitle">Prive</span> 
+            </div>
+            <div id="zoomImage" style="height:210px;"> 
+                <img class="layz0" id="layz0" style="height:210px;position:absolute;" src="img/transparent.png" />
+            </div>
+            <div>
+            <div id="popup_content"></div>   
+            <!-- content --> 
+            </div>
+        </div>
     
 <!-- page -->
 

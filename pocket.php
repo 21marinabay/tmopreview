@@ -201,10 +201,10 @@ float:right;
                 <div class="compartment">
 				<div style="text-align:center;width:160px;height:240px;" class="section" onClick="showpocket('both');" >
 				<img title="both.png" class="img1" src="design/pocket/both.png">
-				<div style="">both</div></div><div style="text-align:center;width:160px;height:240px;" class="section" onClick="showpocket('left pocket');"><img title="left-pocket.png" class="img2" src="design/pocket/left-pocket.png" style="border: medium none;">
-				<div style="">left pocket</div></div><div style="text-align:center;width:160px;height:240px;" class="section" onClick="showpocket('no pocket');">
+				<div style="">Both</div></div><div style="text-align:center;width:160px;height:240px;" class="section" onClick="showpocket('left pocket');"><img title="left-pocket.png" class="img2" src="design/pocket/left-pocket.png" style="border: medium none;">
+				<div style="">Left pocket</div></div><div style="text-align:center;width:160px;height:240px;" class="section" onClick="showpocket('no pocket');">
 				<img title="no-pocket.png" class="img3" src="design/pocket/no-pocket.png" style="border: medium none;">
-				<div style="">no pocket</div></div>
+				<div style="">No pocket</div></div>
               </div>
                   <div id="fabricZoom" style="display:none;">
                   <div class="fabricTitle">
@@ -238,7 +238,7 @@ float:right;
                   <ol>
                   <li style="background-color:white;"><a id="reset" href="#" style="background-color:white;color:black;" onclick="reset();return false;">Reset Sample</a></li>
                   <li><a href="#" id="details" onclick="return false;">Details</a></li>
-                  <li><a href="#">Add To Cart</a></li>
+                  <li><a href="measure1.php">Proceed To Order</a></li>
                   <ol>
                   <div style="clear:both;"></div>
                   </div>

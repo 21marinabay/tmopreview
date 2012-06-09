@@ -120,7 +120,7 @@ sort($filename);
 						$('#'+layer).attr('src','img/transparent.png');
 					
 					} else {
-						alert(data[index].path);
+						
 						$('#'+layer).attr('src',data[index].path);
 						
 					}
@@ -276,7 +276,7 @@ Shopping cart $0.00 (0)
 		<ol>
 		<li style="background-color:white;"><a style="background-color:white;color:black;" href="#" id="reset" onclick="reset();return false;">Reset Sample</a></li>
 		<li><a href="#" id="details" onclick="return false;">Details</a></li>
-		<li><a href="#">Add To Cart</a></li>
+		<li><a href="measure1.php">Proceed To Order</a></li>
 	<ol>
 
 	<div style="clear:both;"></div>
